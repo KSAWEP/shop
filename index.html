@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر Moon - تصاميم المواقع والهوية البصرية المحترفة</title>
     <meta name="description" content="متجر Moon متخصص في تصميم المواقع، الهوية البصرية، المتاجر الإلكترونية وقوالب Canva بأسعار تنافسية. خدمات تقنية احترافية مع ضمان الجودة والتميز">
-    <link rel="icon" href="https://j.top4top.io/p_3516ipo3r1.png" type="image/png">
+    <link rel="icon" href="https://i.imgur.com/fJJ3LYY.png" type="image/png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://k.top4top.io/p_3519v76yk1.png" as="image">
     
     <style>
         :root {
-            --primary-color: #1e40af;
-            --secondary-color: #2563eb;
-            --accent-color: #3b82f6;
+            --primary-color: #1f2b42;
+            --secondary-color: #2d4168;
+            --accent-color: #4a90e2;
             --success-color: #10b981;
             --warning-color: #f59e0b;
             --error-color: #ef4444;
             --text-primary: #ffffff;
             --text-secondary: #cbd5e1;
             --bg-dark: #0f172a;
-            --bg-card: rgba(37, 99, 235, 0.1);
-            --border-color: rgba(59, 130, 246, 0.2);
+            --bg-card: rgba(74, 144, 226, 0.1);
+            --border-color: rgba(74, 144, 226, 0.2);
+            --teal-accent: #14b8a6;
         }
 
-        /* حل شامل لمشكلة التضليل (Anti-Aliasing) */
         * {
             margin: 0;
             padding: 0;
@@ -37,30 +36,20 @@
 
         body {
             font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 50%, #1f2937 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2d4168 50%, #1f2937 100%);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
             opacity: 0;
             animation: pageLoadIn 0.8s ease-out forwards;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-smooth: always;
-            text-rendering: optimizeLegibility;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            direction: rtl;
+            text-align: right;
         }
 
         @keyframes pageLoadIn {
-            0% {
-                opacity: 0;
-                transform: scale(1.05);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+            0% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         .container {
@@ -85,26 +74,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
+            min-height: 70px;
         }
 
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .logo {
-            height: 55px;
-            width: 55px;
-            border-radius: 18px;
+            height: 45px;
+            width: 45px;
+            border-radius: 15px;
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
             transition: all 0.3s ease;
         }
 
         .brand-name {
             color: var(--text-primary);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 900;
             background: linear-gradient(45deg, #3b82f6, #2563eb);
             -webkit-background-clip: text;
@@ -115,7 +105,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
         }
 
@@ -123,12 +113,13 @@
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            padding: 12px 18px;
+            font-size: 0.9rem;
+            padding: 10px 15px;
             border-radius: 25px;
             background: rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .nav-links a:hover,
@@ -148,8 +139,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 45px;
+            height: 45px;
         }
 
         .whatsapp-btn {
@@ -159,8 +150,8 @@
 
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
+            top: -6px;
+            right: -6px;
             background: linear-gradient(45deg, var(--error-color), #dc2626);
             color: white;
             border-radius: 50%;
@@ -173,10 +164,21 @@
             justify-content: center;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
         /* Page sections */
         .page-section {
             min-height: 100vh;
-            padding-top: 90px;
+            padding-top: 85px;
             background: transparent;
             color: var(--text-primary);
         }
@@ -191,7 +193,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 100px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
             min-height: 100vh;
             display: flex;
@@ -203,30 +205,19 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            gap: 60px;
+            gap: 40px;
         }
 
         .hero-text {
             flex: 1;
-            text-align: left;
+            text-align: right;
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateX(50px);
             animation: heroTextEnter 1.2s ease-out 0.3s forwards;
         }
 
-        @keyframes heroTextEnter {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 25px;
             color: var(--text-primary);
             font-weight: 900;
@@ -236,8 +227,8 @@
         }
 
         .hero-text p {
-            font-size: 1.3rem;
-            margin-bottom: 35px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             color: var(--text-secondary);
             line-height: 1.8;
             opacity: 0;
@@ -249,17 +240,20 @@
             opacity: 0;
             transform: translateY(30px);
             animation: slideUpFadeIn 1s ease-out 1s forwards;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        @keyframes heroTextEnter {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes slideUpFadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         /* Announcement Box */
@@ -278,19 +272,13 @@
         }
 
         @keyframes announceEnter {
-            0% {
-                opacity: 0;
-                transform: scale(0.9) translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+            0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .announcement-box h3 {
             color: var(--secondary-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -298,7 +286,7 @@
         .announcement-highlight {
             color: #60a5fa;
             font-weight: 700;
-            padding: 2px 8px;
+            padding: 3px 8px;
             background: rgba(96, 165, 250, 0.2);
             border-radius: 8px;
         }
@@ -307,37 +295,53 @@
         .cta-button {
             background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
             color: var(--text-primary);
-            padding: 18px 35px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 30px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
             border: none;
             cursor: pointer;
             display: inline-block;
+            text-align: center;
         }
 
         .secondary-button {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-primary);
-            padding: 18px 35px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 30px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
             backdrop-filter: blur(10px);
             display: inline-block;
+            text-align: center;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
+        .back-button {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .hero-image {
@@ -348,7 +352,7 @@
 
         .hero-image img {
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             height: auto;
             border-radius: 25px;
             box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
@@ -357,35 +361,26 @@
             transition: all 0.4s ease;
             display: block;
             opacity: 0;
-            transform: translateX(100px) scale(0.8);
+            transform: translateX(-100px) scale(0.8);
             animation: heroImageEnter 1.5s ease-out 0.8s forwards;
         }
 
         @keyframes heroImageEnter {
-            0% {
-                opacity: 0;
-                transform: translateX(100px) scale(0.8) rotateY(20deg);
-            }
-            50% {
-                opacity: 0.7;
-                transform: translateX(20px) scale(0.95) rotateY(10deg);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0) scale(1) rotateY(0deg);
-            }
+            0% { opacity: 0; transform: translateX(-100px) scale(0.8) rotateY(-20deg); }
+            50% { opacity: 0.7; transform: translateX(-20px) scale(0.95) rotateY(-10deg); }
+            100% { opacity: 1; transform: translateX(0) scale(1) rotateY(0deg); }
         }
 
         .hero-image img:hover {
-            transform: scale(1.05) rotateY(5deg);
+            transform: scale(1.05) rotateY(-5deg);
             box-shadow: 0 35px 70px rgba(59, 130, 246, 0.6);
         }
 
         /* Section titles */
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 70px;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
             color: var(--secondary-color);
             font-weight: 900;
             position: relative;
@@ -400,14 +395,14 @@
             width: 100px;
             height: 4px;
             background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 50px;
         }
 
@@ -420,117 +415,278 @@
             position: relative;
             backdrop-filter: blur(15px);
             cursor: pointer;
-            /* حل التضليل للكروت */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            will-change: transform;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            display: flex;
+            flex-direction: column;
+            height: 580px;
         }
 
         .product-image {
+            height: 75%;
             border-radius: 25px 25px 0 0;
             position: relative;
             transition: all 0.3s ease;
-            /* منع التضليل في الصور */
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
             overflow: hidden;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-image img {
-            transition: all 0.3s ease;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* تحسين جودة الصور */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            -webkit-font-smoothing: antialiased;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
+            transition: all 0.3s ease;
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-card:hover .product-image img {
-            opacity: 0.9;
+            transform: scale(1.02);
         }
 
         .product-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.3);
-            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.4);
+            border-color: rgba(59, 130, 246, 0.6);
         }
 
         .product-content {
-            padding: 35px;
+            height: 25%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product-title {
             color: var(--accent-color);
-            font-size: 1.6rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            line-height: 1.3;
+            height: auto;
+            min-height: 2.6rem;
         }
 
         .product-description {
             color: var(--text-secondary);
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-details-btn {
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .product-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Package Cards */
+        .premium-package {
+            border: 2px solid rgba(99, 102, 241, 0.5);
+            background: linear-gradient(145deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));
+        }
+
+        .gold-package {
+            border: 2px solid rgba(245, 158, 11, 0.5);
+            background: linear-gradient(145deg, rgba(245, 158, 11, 0.1), rgba(249, 115, 22, 0.05));
+        }
+
+        .silver-package {
+            border: 2px solid rgba(100, 116, 139, 0.5);
+            background: linear-gradient(145deg, rgba(100, 116, 139, 0.1), rgba(71, 85, 105, 0.05));
+        }
+
+        .package-badge {
+            animation: pulse 2s infinite;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Product Detail Page */
+        .product-detail {
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+
+        .product-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 30px;
+        }
+
+        .product-detail-image {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, var(--error-color), #dc2626);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .product-detail-info {
+            padding: 20px 0;
+        }
+
+        .product-detail-title {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            font-weight: 900;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .product-detail-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
         .product-features {
-            list-style: none;
-            margin: 25px 0;
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 30px;
         }
 
-        .product-features li {
+        .features-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .features-list li {
             color: var(--text-primary);
             margin: 12px 0;
-            font-size: 0.95rem;
-            position: relative;
             padding-right: 25px;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        .product-features li::before {
+        .features-list li::before {
             content: "✅";
             position: absolute;
             right: 0;
             top: 0;
+            font-size: 1.1rem;
         }
 
-        .product-price {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--accent-color);
-            margin: 25px 0;
+        .product-price-section {
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.15), rgba(37, 99, 235, 0.08));
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
             text-align: center;
-            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05));
-            padding: 20px;
-            border-radius: 18px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .old-price {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .current-price {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .price-note {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .add-to-cart {
-            width: 100%;
+            flex: 1;
             background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
             color: var(--text-primary);
             border: none;
-            padding: 18px;
-            border-radius: 50px;
+            padding: 15px 25px;
+            border-radius: 25px;
             font-weight: 700;
             font-size: 1.1rem;
             cursor: pointer;
@@ -539,6 +695,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            min-width: 200px;
         }
 
         .add-to-cart:hover {
@@ -546,170 +703,85 @@
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.6);
         }
 
-        .add-to-cart:active {
-            transform: translateY(-1px) scale(0.98);
-            transition: all 0.1s ease;
+        .buy-now {
+            flex: 1;
+            background: linear-gradient(45deg, var(--success-color), #059669);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 200px;
         }
 
-        .add-to-cart.clicked {
-            animation: addToCartClick 0.6s ease;
+        .buy-now:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.6);
         }
 
-        @keyframes addToCartClick {
-            0% {
-                transform: scale(1);
-            }
-            25% {
-                transform: scale(0.95);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 25px 50px rgba(16, 185, 129, 0.6);
-                background: linear-gradient(45deg, #10b981, #059669) !important;
-            }
-            75% {
-                transform: scale(1.02);
-            }
-            100% {
-                transform: scale(1);
-            }
+        /* Terms and Conditions */
+        .terms-section {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            margin-top: 40px;
         }
 
-        .cart-icon.shake {
-            animation: cartShake 0.8s ease;
+        .terms-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        @keyframes cartShake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-3px) rotate(-5deg); }
-            20%, 40%, 60%, 80% { transform: translateX(3px) rotate(5deg); }
+        .terms-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
         }
 
-        .product-card.added {
-            animation: productAdded 1s ease;
+        .terms-content h4 {
+            color: var(--text-primary);
+            margin: 20px 0 10px 0;
+            font-size: 1.1rem;
         }
 
-        @keyframes productAdded {
-            0% {
-                transform: translateY(0) scale(1);
-                box-shadow: 0 30px 60px rgba(59, 130, 246, 0.3);
-            }
-            25% {
-                transform: translateY(-10px) scale(1.02);
-                box-shadow: 0 35px 70px rgba(16, 185, 129, 0.5);
-            }
-            50% {
-                transform: translateY(-5px) scale(1.03);
-                box-shadow: 0 40px 80px rgba(16, 185, 129, 0.6);
-                border-color: rgba(16, 185, 129, 0.8);
-            }
-            75% {
-                transform: translateY(-2px) scale(1.01);
-                box-shadow: 0 35px 70px rgba(16, 185, 129, 0.4);
-            }
-            100% {
-                transform: translateY(0) scale(1);
-                box-shadow: 0 30px 60px rgba(59, 130, 246, 0.3);
-                border-color: rgba(59, 130, 246, 0.5);
-            }
+        .terms-content ul {
+            list-style: none;
+            padding-right: 20px;
         }
 
-        .add-to-cart.blocked {
-            animation: blockedButton 0.5s ease;
-            pointer-events: none;
+        .terms-content li {
+            margin: 8px 0;
+            position: relative;
+            padding-right: 20px;
         }
 
-        @keyframes blockedButton {
-            0%, 100% { 
-                transform: translateX(0); 
-                background: linear-gradient(45deg, #ef4444, #dc2626) !important;
-            }
-            25% { 
-                transform: translateX(-5px); 
-                background: linear-gradient(45deg, #ef4444, #dc2626) !important;
-            }
-            75% { 
-                transform: translateX(5px); 
-                background: linear-gradient(45deg, #ef4444, #dc2626) !important;
-            }
-        }
-
-        /* انيميشن السلة عند التحذير */
-        /* انيميشن طيران المنتج للسلة - محسن */
-        .flying-product {
-            position: fixed;
-            z-index: 9999;
-            pointer-events: none;
-            font-size: 2rem;
-            animation: flyToCart 1s ease-out forwards;
-            will-change: transform, opacity;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
-        }
-
-        @keyframes flyToCart {
-            0% {
-                transform: scale(1) rotate(0deg) translateZ(0);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2) rotate(180deg) translateZ(0);
-                opacity: 0.8;
-            }
-            100% {
-                transform: scale(0.5) rotate(360deg) translateZ(0);
-                opacity: 0;
-            }
-        }
-
-        /* Package Cards Styling */
-        .premium-package {
-            border: 2px solid rgba(99, 102, 241, 0.5);
-            background: linear-gradient(145deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));
-        }
-
-        .premium-package:hover {
-            border-color: rgba(99, 102, 241, 0.7);
-            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.3);
-        }
-
-        .gold-package {
-            border: 2px solid rgba(245, 158, 11, 0.5);
-            background: linear-gradient(145deg, rgba(245, 158, 11, 0.1), rgba(249, 115, 22, 0.05));
-        }
-
-        .gold-package:hover {
-            border-color: rgba(245, 158, 11, 0.7);
-            box-shadow: 0 30px 60px rgba(245, 158, 11, 0.3);
-        }
-
-        .silver-package {
-            border: 2px solid rgba(100, 116, 139, 0.5);
-            background: linear-gradient(145deg, rgba(100, 116, 139, 0.1), rgba(71, 85, 105, 0.05));
-        }
-
-        .silver-package:hover {
-            border-color: rgba(100, 116, 139, 0.7);
-            box-shadow: 0 30px 60px rgba(100, 116, 139, 0.3);
-        }
-
-        .package-badge {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .terms-content li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
         }
 
         /* Cart Sidebar */
         .cart-sidebar {
             position: fixed;
             top: 0;
-            right: -450px;
-            width: 450px;
+            right: -100%;
+            width: 90%;
+            max-width: 450px;
             height: 100vh;
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
             z-index: 2000;
@@ -724,7 +796,7 @@
         }
 
         .cart-header {
-            padding: 30px;
+            padding: 25px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -734,7 +806,7 @@
 
         .cart-title {
             color: var(--accent-color);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
         }
 
@@ -807,7 +879,7 @@
 
         .cart-total {
             color: var(--accent-color);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 15px;
             text-align: center;
@@ -823,7 +895,7 @@
             color: white;
             border: none;
             padding: 15px;
-            border-radius: 50px;
+            border-radius: 25px;
             font-weight: bold;
             font-size: 1.1rem;
             cursor: pointer;
@@ -862,23 +934,24 @@
         /* Notifications */
         .notification {
             position: fixed;
-            top: 100px;
+            top: 90px;
             right: 20px;
+            left: 20px;
             z-index: 5000;
-            padding: 18px 28px;
-            border-radius: 50px;
+            padding: 18px 25px;
+            border-radius: 25px;
             color: white;
             font-weight: 600;
             font-size: 1rem;
-            transform: translateX(400px);
+            transform: translateY(-100px);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(15px);
-            max-width: 350px;
+            text-align: center;
         }
 
         .notification.show {
-            transform: translateX(0);
+            transform: translateY(0);
         }
 
         .notification.success {
@@ -893,10 +966,14 @@
             background: linear-gradient(45deg, #0ea5e9, #0284c7);
         }
 
+        .notification.warning {
+            background: linear-gradient(45deg, var(--warning-color), #f97316);
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(15, 23, 42, 0.9));
-            padding: 60px 0 30px;
+            padding: 50px 0 30px;
             text-align: center;
             border-top: 2px solid var(--border-color);
             margin-top: 80px;
@@ -908,7 +985,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
         }
 
         .footer-social {
@@ -929,77 +1006,7 @@
             justify-content: center;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                right: -100%;
-                width: 280px;
-                background: rgba(15, 23, 42, 0.98);
-                backdrop-filter: blur(20px);
-                padding: 30px 20px;
-                border-radius: 0 0 0 25px;
-                transition: all 0.3s ease;
-                flex-direction: column;
-                gap: 15px;
-                height: calc(100vh - 90px);
-                overflow-y: auto;
-            }
-
-            .nav-links.open {
-                right: 0;
-            }
-
-            .hero-content {
-                flex-direction: column;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-actions {
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .cta-button, .secondary-button {
-                width: 100%;
-                max-width: 300px;
-                padding: 20px 30px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-
+        /* About content */
         .about-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1030,73 +1037,319 @@
             padding-right: 20px;
         }
 
-        /* انيميشنات الموديال */
-        @keyframes modalEnter {
-            0% {
-                opacity: 0;
-                transform: scale(0.5) rotateY(30deg);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) rotateY(0deg);
-            }
+        /* Mobile Touch Effects */
+        .product-card:active {
+            transform: translateY(-5px) scale(0.98);
         }
 
-        @keyframes textSlideUp {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
+        .cta-button:active,
+        .secondary-button:active,
+        .product-details-btn:active {
+            transform: translateY(0) scale(0.95);
         }
 
-        @keyframes bounce {
-            0%, 20%, 60%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            80% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes slideInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* تحسينات النموذج */
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-        }
-
-        /* تأثيرات النجوم */
-        #rating-stars span {
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
-            display: inline-block;
-            cursor: pointer;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
         }
 
-        #rating-stars span:hover {
-            transform: scale(1.2) !important;
+        .floating-whatsapp.show {
+            opacity: 1;
+            visibility: visible;
         }
 
-        /* انيميشن دوران للتحميل */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .floating-whatsapp .material-icons {
+            font-size: 1.8rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                padding: 25px 20px;
+                transition: all 0.3s ease;
+                flex-direction: column;
+                gap: 15px;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
+                align-items: stretch;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links a {
+                text-align: center;
+                padding: 15px 20px;
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .cta-button, .secondary-button {
+                width: 100%;
+                max-width: 280px;
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                justify-content: center;
+            }
+
+            .hero-image img {
+                max-width: 320px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .product-card {
+                height: 550px;
+            }
+
+            .product-content {
+                padding: 18px;
+            }
+
+            .product-title {
+                font-size: 1.05rem;
+            }
+
+            .product-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .product-details-btn {
+                font-size: 1rem;
+                padding: 14px 20px;
+                width: 100%;
+                border-radius: 20px;
+                margin-top: 10px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .floating-whatsapp {
+                bottom: 80px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .product-detail-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .product-detail-title {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .add-to-cart, .buy-now {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .current-price {
+                font-size: 2rem;
+            }
+
+            .announcement-box {
+                padding: 20px;
+                margin: 25px 0;
+            }
+
+            .announcement-box h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .cart-sidebar {
+                width: 95%;
+                max-width: 400px;
+            }
+
+            .product-features, .terms-section {
+                padding: 20px;
+            }
+
+            .about-content {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+
+            .faq-item {
+                margin-bottom: 15px;
+            }
+
+            #contact .container > div[style*="grid-template-columns"] {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+                gap: 20px;
+            }
+
+            #features .container > div[style*="grid-template-columns"] {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .notification {
+                right: 10px;
+                left: 10px;
+                padding: 15px 20px;
+                font-size: 0.9rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .product-card {
+                height: 520px;
+            }
+
+            .product-content {
+                padding: 20px;
+            }
+
+            .product-title {
+                font-size: 1rem;
+            }
+
+            .product-description {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .product-details-btn {
+                font-size: 0.9rem;
+                padding: 12px 18px;
+                width: 100%;
+                border-radius: 18px;
+                margin-top: 8px;
+            }
+
+            .current-price {
+                font-size: 1.8rem;
+            }
+
+            .product-detail-title {
+                font-size: 1.4rem;
+            }
+
+            .cta-button, .secondary-button {
+                max-width: 250px;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+
+            .announcement-box {
+                padding: 18px;
+            }
+
+            .hero-image img {
+                max-width: 280px;
+            }
         }
     </style>
 </head>
@@ -1105,7 +1358,7 @@
     <header id="main-header">
         <nav class="container">
             <div class="nav-brand">
-                <img src="https://h.top4top.io/p_3519vd92e1.png" alt="Moon Store Logo" class="logo">
+                <img src="https://i.imgur.com/fJJ3LYY.png" alt="Moon Store Logo" class="logo">
                 <span class="brand-name">Moon</span>
             </div>
             <ul class="nav-links" id="nav-links">
@@ -1132,6 +1385,11 @@
             </button>
         </nav>
     </header>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/966571653884?text=السلام عليكم، أود الاستفسار عن خدماتكم" target="_blank" class="floating-whatsapp" id="floating-whatsapp">
+        <span class="material-icons">chat</span>
+    </a>
 
     <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="closeCart()"></div>
@@ -1189,8 +1447,7 @@
                         <img src="https://k.top4top.io/p_3519v76yk1.png" 
                              alt="Moon Store Design" 
                              id="heroImage"
-                             loading="eager"
-                             onclick="openImageModal(this.src)" />
+                             loading="eager" />
                     </div>
                 </div>
             </div>
@@ -1201,21 +1458,18 @@
     <section id="store" class="page-section">
         <div class="container">
             <h2 class="section-title">منتجاتنا وباقاتنا المتميزة</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; font-size: 1.2rem;">
- 1️⃣ اختر المنتج المطلوب.
- 2️⃣ قم بالدفع عبر الطريقة المتاحة.
- 3️⃣ انسخ رقم الفاتورة بعد الدفع.
- 4️⃣ أرسل رقم الفاتورة في التذكرة (Ticket) على الديسكورد أو عبر الواتس اب.
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 40px; font-size: 1.2rem;">
+                اختر من بين باقاتنا الشاملة أو منتجاتنا المتخصصة حسب احتياجاتك
             </p>
             
             <div class="products-grid">
                 <!-- الباقة الماسية -->
                 <div class="product-card premium-package" data-product="diamond-package">
-                    <div class="product-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://g.top4top.io/p_3520938n81.png" alt="الباقة الماسية" style="width: 100%; height: 100%; object-fit: contain;">
+                    <div class="product-image">
+                        <div class="package-badge" style="background: linear-gradient(45deg, #4a90e2, #14b8a6);">الماسية</div>
+                        <img src="https://i.imgur.com/LXxgYQE.png" alt="الباقة الماسية">
                     </div>
                     <div class="product-content">
-                        <div class="package-badge" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(45deg, #6366f1, #8b5cf6); color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">الماسية</div>
                         <h3 class="product-title">
                             <span class="material-icons">workspace_premium</span>
                             الباقة الماسية
@@ -1223,50 +1477,20 @@
                         <p class="product-description">
                             باقة شاملة ومتكاملة تضم جميع الخدمات المتقدمة لبناء حضورك الرقمي بشكل احترافي ومتميز
                         </p>
-                        <div class="product-specifications" style="background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; margin: 20px 0;">
-                            <h4 style="color: var(--accent-color); margin-bottom: 15px; font-size: 1.1rem;">📋 المواصفات:</h4>
-                            <ul style="list-style: none; margin: 0; padding: 0;">
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    تصميم كانفا احترافي
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    هوية بصرية كاملة - شعار
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    تصميم موقع إلكتروني
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    تصميم متجر إلكتروني
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    رابط سنة كاملة (دومين)
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    استضافة محمية وآمنة
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product-price" style="background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));">350 ريال</div>
-                        <button class="add-to-cart" style="background: linear-gradient(45deg, #6366f1, #8b5cf6);" onclick="addToCart('diamond-package', 'الباقة الماسية', 350, 'https://payment.paylink.sa/pay/product/22889811000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            اختر الباقة
+                        <button class="product-details-btn" onclick="showProductDetail('diamond-package')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
                 <!-- الباقة الذهبية -->
                 <div class="product-card gold-package" data-product="gold-package">
-                    <div class="product-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #f59e0b, #f97316); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://e.top4top.io/p_3520awvcr1.png" alt="الباقة الذهبية" style="width: 100%; height: 100%; object-fit: contain;">
+                    <div class="product-image">
+                        <div class="package-badge" style="background: linear-gradient(45deg, #f59e0b, #f97316);">الذهبية</div>
+                        <img src="https://i.imgur.com/8UzX9IS.png" alt="الباقة الذهبية">
                     </div>
                     <div class="product-content">
-                        <div class="package-badge" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(45deg, #f59e0b, #f97316); color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">الذهبية</div>
                         <h3 class="product-title">
                             <span class="material-icons">auto_awesome</span>
                             الباقة الذهبية
@@ -1274,50 +1498,20 @@
                         <p class="product-description">
                             باقة متوسطة مثالية للشركات الناشئة والأفراد الذين يسعون لبناء حضور رقمي قوي بميزانية معقولة
                         </p>
-                        <div class="product-specifications" style="background: rgba(245, 158, 11, 0.1); padding: 20px; border-radius: 15px; margin: 20px 0;">
-                            <h4 style="color: #f59e0b; margin-bottom: 15px; font-size: 1.1rem;">📋 المواصفات:</h4>
-                            <ul style="list-style: none; margin: 0; padding: 0;">
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #f59e0b;">•</span>
-                                    تصميم كانفا عالي الجودة
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #f59e0b;">•</span>
-                                    تصميم متجر إلكتروني
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #f59e0b;">•</span>
-                                    رابط سنة كاملة (دومين)
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #f59e0b;">•</span>
-                                    استضافة مجانية حماية ضعيفة
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #f59e0b;">•</span>
-                                    هوية بصرية - شعار
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #f59e0b;">•</span>
-                                    دعم فني أساسي
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product-price" style="background: linear-gradient(45deg, rgba(245, 158, 11, 0.1), rgba(249, 115, 22, 0.05));">250 ريال</div>
-                        <button class="add-to-cart" style="background: linear-gradient(45deg, #f59e0b, #f97316);" onclick="addToCart('gold-package', 'الباقة الذهبية', 250, 'https://payment.paylink.sa/pay/product/22890161000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            اختر الباقة
+                        <button class="product-details-btn" onclick="showProductDetail('gold-package')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
                 <!-- الباقة الفضية -->
                 <div class="product-card silver-package" data-product="silver-package">
-                    <div class="product-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #64748b, #475569); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://c.top4top.io/p_3520llp8o1.png" alt="الباقة الفضية" style="width: 100%; height: 100%; object-fit: contain;">
+                    <div class="product-image">
+                        <div class="package-badge" style="background: linear-gradient(45deg, #64748b, #475569);">الفضية</div>
+                        <img src="https://i.imgur.com/yIGcYRY.png" alt="الباقة الفضية">
                     </div>
                     <div class="product-content">
-                        <div class="package-badge" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(45deg, #64748b, #475569); color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">الفضية</div>
                         <h3 class="product-title">
                             <span class="material-icons">star</span>
                             الباقة الفضية
@@ -1325,211 +1519,117 @@
                         <p class="product-description">
                             باقة اقتصادية ومناسبة للمبتدئين والمشاريع الصغيرة التي تريد البدء في العالم الرقمي بتكلفة منخفضة
                         </p>
-                        <div class="product-specifications" style="background: rgba(100, 116, 139, 0.1); padding: 20px; border-radius: 15px; margin: 20px 0;">
-                            <h4 style="color: #64748b; margin-bottom: 15px; font-size: 1.1rem;">📋 المواصفات:</h4>
-                            <ul style="list-style: none; margin: 0; padding: 0;">
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #64748b;">•</span>
-                                    تصميم كانفا خمس صور
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #64748b;">•</span>
-                                    تصميم متجر إلكتروني
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #64748b;">•</span>
-                                    دومين مجاني بدون اسم مخصص
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #64748b;">•</span>
-                                    متجر أو موقع أساسي
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #64748b;">•</span>
-                                    استضافة مجانية حماية ضعيفة
-                                </li>
-                                <li style="color: var(--text-primary); margin: 8px 0; padding-right: 20px; position: relative;">
-                                    <span style="position: absolute; right: 0; color: #64748b;">•</span>
-                                    دعم فني محدود
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product-price" style="background: linear-gradient(45deg, rgba(100, 116, 139, 0.1), rgba(71, 85, 105, 0.05));">150 ريال</div>
-                        <button class="add-to-cart" style="background: linear-gradient(45deg, #64748b, #475569);" onclick="addToCart('silver-package', 'الباقة الفضية', 150, 'https://payment.paylink.sa/pay/product/22890281000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            اختر الباقة
+                        <button class="product-details-btn" onclick="showProductDetail('silver-package')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
-                <!-- Product 1: Visual Identity -->
+                <!-- المنتجات الفردية -->
                 <div class="product-card" data-product="visual-identity">
-                    <div class="product-image" style="width: 100%; height: 200px; background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://c.top4top.io/p_3520lalva1.png" alt="الهوية البصرية" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/MArsLUn.png" alt="الهوية البصرية">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">
                             <span class="material-icons">palette</span>
-                            الهوية البصرية الاحترافية
+                            هوية بصرية
                         </h3>
                         <p class="product-description">
                             احصل على هوية بصرية متكاملة واحترافية تعكس شخصية علامتك التجارية وتميزها عن المنافسين
                         </p>
-                        <ul class="product-features">
-                            <li>تصميم شعار احترافي وفريد</li>
-                            <li>بطاقة أعمال أنيقة ومميزة</li>
-                            <li>دليل الاستخدام والهوية</li>
-                            <li>ملفات بجودة عالية (AI, PNG, JPG)</li>
-                            <li>3 تعديلات مجانية</li>
-                            <li>تسليم خلال 3-5 أيام</li>
-                        </ul>
-                        <div class="product-price">70 ريال</div>
-                        <button class="add-to-cart" onclick="console.log('تم النقر على الهوية البصرية'); addToCart('visual-identity', 'الهوية البصرية الاحترافية', 70, 'https://payment.paylink.sa/pay/product/22736671000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            أضف للسلة
+                        <button class="product-details-btn" onclick="showProductDetail('visual-identity')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
-                <!-- Product 2: Website Design -->
                 <div class="product-card" data-product="website">
-                    <div class="product-image" style="width: 100%; height: 200px; background: linear-gradient(45deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://g.top4top.io/p_3520jiqbs1.png" alt="موقع إلكتروني" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/OfWnjWR.png" alt="موقع إلكتروني">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">
                             <span class="material-icons">language</span>
-                            موقع إلكتروني متكامل
+                            موقع متكامل
                         </h3>
                         <p class="product-description">
                             موقع إلكتروني احترافي ومتجاوب مع جميع الأجهزة، محسن لمحركات البحث ومصمم بأحدث التقنيات
                         </p>
-                        <ul class="product-features">
-                            <li>تصميم متجاوب وعصري</li>
-                            <li>5 صفحات رئيسية متكاملة</li>
-                            <li>تحسين محركات البحث (SEO)</li>
-                            <li>استضافة مجانية لشهر كامل</li>
-                            <li>شهادة SSL مجانية للأمان</li>
-                            <li>دعم فني لمدة شهر</li>
-                        </ul>
-                        <div class="product-price">100 ريال</div>
-                        <button class="add-to-cart" onclick="console.log('تم النقر على الموقع الإلكتروني'); addToCart('website', 'موقع إلكتروني متكامل', 100, 'https://payment.paylink.sa/pay/product/22736701000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            أضف للسلة
+                        <button class="product-details-btn" onclick="showProductDetail('website')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
-                <!-- Product 3: E-commerce Store -->
                 <div class="product-card" data-product="ecommerce">
-                    <div class="product-image" style="width: 100%; height: 200px; background: linear-gradient(45deg, #8b5cf6, #7c3aed); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://a.top4top.io/p_35208nk201.png" alt="متجر إلكتروني" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/uuegemQ.png" alt="متجر إلكتروني">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">
                             <span class="material-icons">storefront</span>
-                            متجر إلكتروني شامل
+                            متجر شامل
                         </h3>
                         <p class="product-description">
                             متجر إلكتروني متكامل مع أنظمة دفع متقدمة ولوحة تحكم شاملة لإدارة المنتجات والطلبات
                         </p>
-                        <ul class="product-features">
-                            <li>لوحة تحكم كاملة ومتقدمة</li>
-                            <li>أنظمة دفع متعددة وآمنة</li>
-                            <li>إدارة المنتجات والمخزون</li>
-                            <li>تقارير المبيعات التفصيلية</li>
-                            <li>دعم فني لـ 3 أشهر</li>
-                            <li>تدريب على الاستخدام</li>
-                        </ul>
-                        <div class="product-price">110 ريال</div>
-                        <button class="add-to-cart" onclick="console.log('تم النقر على المتجر الإلكتروني'); addToCart('ecommerce', 'متجر إلكتروني شامل', 110, 'https://payment.paylink.sa/pay/product/22736731000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            أضف للسلة
+                        <button class="product-details-btn" onclick="showProductDetail('ecommerce')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
-                <!-- Product 4: FiveM Server Website -->
                 <div class="product-card" data-product="fivem">
-                    <div class="product-image" style="width: 100%; height: 200px; background: linear-gradient(45deg, #ef4444, #dc2626); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://e.top4top.io/p_352046b981.png" alt="سيرفر FiveM" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/SSYS4eo.png" alt="سيرفر FiveM">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">
                             <span class="material-icons">sports_esports</span>
-                            موقع سيرفر FiveM
+                            سيرفر FiveM
                         </h3>
                         <p class="product-description">
                             موقع مخصص لسيرفرات FiveM مع لوحات تحكم متقدمة وتصميم جذاب مناسب لمجتمع الألعاب
                         </p>
-                        <ul class="product-features">
-                            <li>تصميم مخصص للألعاب</li>
-                            <li>لوحة تحكم اللاعبين</li>
-                            <li>إحصائيات السيرفر المباشرة</li>
-                            <li>نظام العضويات والرتب</li>
-                            <li>تحديثات فورية</li>
-                            <li>دعم Discord Bot</li>
-                        </ul>
-                        <div class="product-price">90 ريال</div>
-                        <button class="add-to-cart" onclick="console.log('تم النقر على FiveM'); addToCart('fivem', 'موقع سيرفر FiveM', 90, 'https://payment.paylink.sa/pay/product/22736831000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            أضف للسلة
+                        <button class="product-details-btn" onclick="showProductDetail('fivem')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
 
-                <!-- Product 5: Canva Templates -->
                 <div class="product-card" data-product="canva">
-                    <div class="product-image" style="width: 100%; height: 200px; background: linear-gradient(45deg, #06b6d4, #0891b2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="https://f.top4top.io/p_35201k8w61.png" alt="قوالب Canva" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/pQWp2Yp.png" alt="قوالب Canva">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">
                             <span class="material-icons">analytics</span>
-                            قوالب Canva الاحترافية
+                            قوالب Canva
                         </h3>
                         <p class="product-description">
                             مجموعة متكاملة من القوالب الاحترافية للكانفا مناسبة لجميع احتياجاتك التسويقية والإعلانية
                         </p>
-                        <ul class="product-features">
-                            <li>10 قوالب متنوعة وعصرية</li>
-                            <li>قابلة للتخصيص بسهولة</li>
-                            <li>جودة عالية وألوان جذابة</li>
-                            <li>مناسبة لوسائل التواصل</li>
-                            <li>إرشادات الاستخدام المفصلة</li>
-                            <li>تحديثات مجانية</li>
-                        </ul>
-                        <div class="product-price">50 ريال</div>
-                        <button class="add-to-cart" onclick="console.log('تم النقر على Canva'); addToCart('canva', 'قوالب Canva الاحترافية', 50, 'https://payment.paylink.sa/pay/product/22736861000149903'); return false;">
-                            <span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>
-                            أضف للسلة
+                        <button class="product-details-btn" onclick="showProductDetail('canva')">
+                            <span class="material-icons">visibility</span>
+                            إظهار التفاصيل
                         </button>
                     </div>
                 </div>
             </div>
-            
-            <!-- Special Offers Section -->
-            <div style="margin-top: 80px; padding: 40px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05)); border-radius: 25px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
-                <h3 style="color: var(--accent-color); font-size: 2rem; margin-bottom: 20px; font-weight: 700;">
-                    🔥 عروض خاصة محدودة
-                </h3>
-                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
-                    استفد من عروضنا الخاصة واحصل على خصومات مذهلة
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-                    <div style="background: rgba(16, 185, 129, 0.1); padding: 20px; border-radius: 15px; border: 1px solid rgba(16, 185, 129, 0.3);">
-                        <h4 style="color: var(--success-color); margin-bottom: 10px;">خصم 50%</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">كود: SA50</p>
-                    </div>
-                    <div style="background: rgba(245, 158, 11, 0.1); padding: 20px; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.3);">
-                        <h4 style="color: var(--warning-color); margin-bottom: 10px;">دعم مجاني</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">لمدة شهر كامل</p>
-                    </div>
-                    <div style="background: rgba(139, 92, 246, 0.1); padding: 20px; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.3);">
-                        <h4 style="color: var(--accent-color); margin-bottom: 10px;">تسليم سريع</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">خلال 24-48 ساعة</p>
-                    </div>
-                </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Pages -->
+    <section id="product-detail" class="page-section">
+        <div class="container">
+            <div class="product-detail" id="product-detail-content">
+                <!-- Content will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -1540,19 +1640,19 @@
             <h2 class="section-title">من نحن</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3 style="color: #3b82f6; font-size: 1.5rem; margin-bottom: 20px;">🌙 متجر Moon</h3>
+                    <h3 style="color: #3b82f6; font-size: 1.5rem; margin-bottom: 20px;">متجر Moon</h3>
                     <p>متجر Moon هو وجهتك الموثوقة للحصول على أفضل خدمات التصميم الرقمي والتطوير. نحن فريق متخصص من المصممين والمطورين المبدعين الذين يؤمنون بقوة التصميم في تحويل الأفكار إلى واقع رقمي استثنائي.</p>
                     <br>
                     <p>رغم حداثة انطلاقتنا، استطعنا أن نحقق نجاحات ملموسة في مجال التصميم والتطوير خلال فترة وجيزة، حيث نجحنا في إنجاز العديد من المشاريع المتميزة لعملاء من مختلف القطاعات والمجالات.</p>
                 </div>
                 <div class="about-features">
-                    <h3 style="color: var(--accent-color); margin-bottom: 20px; font-size: 1.3rem;">إنجازاتنا وأرقامنا</h3>
+                    <h3 style="color: var(--accent-color); margin-bottom: 20px; font-size: 1.2rem;">إنجازاتنا وأرقامنا</h3>
                     <ul>
-                        <li>🚀 مشاريع متنوعة ومتميزة في مختلف المجالات</li>
-                        <li>🚀 معدل رضا العملاء 99% - شهادة ثقة حقيقية</li>
-                        <li>🚀 فريق محترف من أفضل المصممين والمطورين</li>
-                        <li>🚀 خبرة متخصصة في السوق السعودي والخليجي</li>
-                        <li>🚀 تسليم المشاريع في الوقت المحدد دائماً</li>
+                        <li>مشاريع متنوعة ومتميزة في مختلف المجالات</li>
+                        <li>معدل رضا العملاء 99% - شهادة ثقة حقيقية</li>
+                        <li>فريق محترف من أفضل المصممين والمطورين</li>
+                        <li>خبرة متخصصة في السوق السعودي والخليجي</li>
+                        <li>تسليم المشاريع في الوقت المحدد دائماً</li>
                     </ul>
                 </div>
             </div>
@@ -1563,87 +1663,58 @@
     <section id="features" class="page-section">
         <div class="container">
             <h2 class="section-title">لماذا تختار متجر Moon؟</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 60px; font-size: 1.2rem;">
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
                 نقدم لك خدمات متميزة وحلول إبداعية تضعك في المقدمة
             </p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px;">
                 
-                <!-- المميزة 1 -->
-                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(59, 130, 246, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid var(--border-color); text-align: center; transition: all 0.3s ease;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);">
-                        <span class="material-icons" style="font-size: 2.5rem; color: white;">flash_on</span>
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(59, 130, 246, 0.05)); padding: 35px; border-radius: 20px; border: 2px solid var(--border-color); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);">
+                        <span class="material-icons" style="font-size: 2.2rem; color: white;">flash_on</span>
                     </div>
-                    <h3 style="color: var(--accent-color); font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">تسليم سريع</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">نلتزم بالمواعيد ونسلم مشاريعك في أسرع وقت ممكن بأعلى جودة</p>
+                    <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">تسليم سريع</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem;">نلتزم بالمواعيد ونسلم مشاريعك في أسرع وقت ممكن بأعلى جودة</p>
                 </div>
 
-                <!-- المميزة 2 -->
-                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(16, 185, 129, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid rgba(16, 185, 129, 0.2); text-align: center; transition: all 0.3s ease;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, var(--success-color), #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);">
-                        <span class="material-icons" style="font-size: 2.5rem; color: white;">verified</span>
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(16, 185, 129, 0.05)); padding: 35px; border-radius: 20px; border: 2px solid rgba(16, 185, 129, 0.2); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(45deg, var(--success-color), #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);">
+                        <span class="material-icons" style="font-size: 2.2rem; color: white;">verified</span>
                     </div>
-                    <h3 style="color: var(--success-color); font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">جودة مضمونة</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">نضمن لك الجودة العالية مع 3 تعديلات مجانية لضمان رضاك التام</p>
+                    <h3 style="color: var(--success-color); font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">جودة مضمونة</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem;">نضمن لك الجودة العالية مع 3 تعديلات مجانية لضمان رضاك التام</p>
                 </div>
 
-                <!-- المميزة 3 -->
-                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(245, 158, 11, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid rgba(245, 158, 11, 0.2); text-align: center; transition: all 0.3s ease;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, var(--warning-color), #f97316); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);">
-                        <span class="material-icons" style="font-size: 2.5rem; color: white;">savings</span>
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(245, 158, 11, 0.05)); padding: 35px; border-radius: 20px; border: 2px solid rgba(245, 158, 11, 0.2); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(45deg, var(--warning-color), #f97316); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);">
+                        <span class="material-icons" style="font-size: 2.2rem; color: white;">savings</span>
                     </div>
-                    <h3 style="color: var(--warning-color); font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">أسعار تنافسية</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">أسعار عادلة ومناسبة لجميع الميزانيات مع عروض خاصة مستمرة</p>
+                    <h3 style="color: var(--warning-color); font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">أسعار تنافسية</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem;">أسعار عادلة ومناسبة لجميع الميزانيات مع عروض خاصة مستمرة</p>
                 </div>
 
-                <!-- المميزة 4 -->
-                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(139, 92, 246, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid rgba(139, 92, 246, 0.2); text-align: center; transition: all 0.3s ease;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #8b5cf6, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);">
-                        <span class="material-icons" style="font-size: 2.5rem; color: white;">support_agent</span>
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(139, 92, 246, 0.05)); padding: 35px; border-radius: 20px; border: 2px solid rgba(139, 92, 246, 0.2); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(45deg, #8b5cf6, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);">
+                        <span class="material-icons" style="font-size: 2.2rem; color: white;">support_agent</span>
                     </div>
-                    <h3 style="color: #8b5cf6; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">دعم مستمر</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">دعم فني مجاني لفترة بعد التسليم لضمان عمل كل شيء بكفاءة</p>
+                    <h3 style="color: #8b5cf6; font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">دعم مستمر</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem;">دعم فني مجاني لفترة بعد التسليم لضمان عمل كل شيء بكفاءة</p>
                 </div>
 
-                <!-- المميزة 5 -->
-                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(239, 68, 68, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid rgba(239, 68, 68, 0.2); text-align: center; transition: all 0.3s ease;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, var(--error-color), #dc2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);">
-                        <span class="material-icons" style="font-size: 2.5rem; color: white;">auto_awesome</span>
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(239, 68, 68, 0.05)); padding: 35px; border-radius: 20px; border: 2px solid rgba(239, 68, 68, 0.2); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(45deg, var(--error-color), #dc2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 35px rgba(239, 68, 68, 0.4);">
+                        <span class="material-icons" style="font-size: 2.2rem; color: white;">auto_awesome</span>
                     </div>
-                    <h3 style="color: var(--error-color); font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">إبداع وتميز</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">تصاميم فريدة ومبدعة تعكس شخصية علامتك التجارية بأسلوب عصري</p>
+                    <h3 style="color: var(--error-color); font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">إبداع وتميز</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem;">تصاميم فريدة ومبدعة تعكس شخصية علامتك التجارية بأسلوب عصري</p>
                 </div>
 
-                <!-- المميزة 6 -->
-                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(6, 182, 212, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid rgba(6, 182, 212, 0.2); text-align: center; transition: all 0.3s ease;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #06b6d4, #0891b2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);">
-                        <span class="material-icons" style="font-size: 2.5rem; color: white;">verified_user</span>
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(6, 182, 212, 0.05)); padding: 35px; border-radius: 20px; border: 2px solid rgba(6, 182, 212, 0.2); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(45deg, #06b6d4, #0891b2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 35px rgba(6, 182, 212, 0.4);">
+                        <span class="material-icons" style="font-size: 2.2rem; color: white;">verified_user</span>
                     </div>
-                    <h3 style="color: #06b6d4; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">موثق رسمياً</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">نعمل بوثيقة عمل حر رسمية مسجلة لضمان حقوقك وراحة بالك التامة</p>
-                </div>
-            </div>
-
-            <!-- إحصائيات سريعة -->
-            <div style="margin-top: 80px; padding: 50px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05)); border-radius: 25px; border: 2px solid rgba(59, 130, 246, 0.3);">
-                <h3 style="text-align: center; color: var(--accent-color); font-size: 2rem; margin-bottom: 40px; font-weight: 700;">أرقامنا تتحدث</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 900; color: var(--success-color); margin-bottom: 10px;">99%</div>
-                        <p style="color: var(--text-secondary); font-weight: 600;">معدل رضا العملاء</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 900; color: var(--warning-color); margin-bottom: 10px;">24</div>
-                        <p style="color: var(--text-secondary); font-weight: 600;">ساعة متوسط التسليم</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 900; color: var(--error-color); margin-bottom: 10px;">3</div>
-                        <p style="color: var(--text-secondary); font-weight: 600;">تعديلات مجانية</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 900; color: var(--accent-color); margin-bottom: 10px;">50%</div>
-                        <p style="color: var(--text-secondary); font-weight: 600;">خصم حاليا</p>
-                    </div>
+                    <h3 style="color: #06b6d4; font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">موثق رسمياً</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem;">نعمل بوثيقة عمل حر رسمية مسجلة لضمان حقوقك وراحة بالك التامة</p>
                 </div>
             </div>
         </div>
@@ -1653,40 +1724,40 @@
     <section id="faq" class="page-section">
         <div class="container">
             <h2 class="section-title">الأسئلة الشائعة</h2>
-            <p style="text-align: center; color: #ccc; margin-bottom: 40px;">إجابات على أكثر الأسئلة التي يطرحها عملاؤنا</p>
+            <p style="text-align: center; color: #ccc; margin-bottom: 40px; font-size: 1.1rem;">إجابات على أكثر الأسئلة التي يطرحها عملاؤنا</p>
             <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item" style="background: var(--bg-card); margin-bottom: 15px; border-radius: 10px; border: 2px solid var(--border-color); overflow: hidden;">
-                    <div class="faq-question" onclick="toggleFaq(this)" style="padding: 20px; background: rgba(59, 130, 246, 0.2); cursor: pointer; font-weight: bold; color: var(--accent-color); display: flex; justify-content: space-between; align-items: center;">
+                <div class="faq-item" style="background: var(--bg-card); margin-bottom: 15px; border-radius: 12px; border: 2px solid var(--border-color); overflow: hidden;">
+                    <div class="faq-question" onclick="toggleFaq(this)" style="padding: 20px; background: rgba(59, 130, 246, 0.2); cursor: pointer; font-weight: bold; color: var(--accent-color); display: flex; justify-content: space-between; align-items: center; font-size: 1rem;">
                         <span>كم يستغرق تصميم الهوية البصرية؟</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: #fff;">
                         <div style="padding: 20px 0;">
-                            <p>عادةً ما يستغرق تصميم الهوية البصرية من 3 إلى 7 أيام عمل، حسب تعقيد التصميم ومتطلبات العميل. نحن نحرص على التسليم في الوقت المحدد مع ضمان أعلى جودة.</p>
+                            <p style="font-size: 1rem;">عادةً ما يستغرق تصميم الهوية البصرية من 3 إلى 7 أيام عمل، حسب تعقيد التصميم ومتطلبات العميل. نحن نحرص على التسليم في الوقت المحدد مع ضمان أعلى جودة.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="faq-item" style="background: var(--bg-card); margin-bottom: 15px; border-radius: 10px; border: 2px solid var(--border-color); overflow: hidden;">
-                    <div class="faq-question" onclick="toggleFaq(this)" style="padding: 20px; background: rgba(59, 130, 246, 0.2); cursor: pointer; font-weight: bold; color: var(--accent-color); display: flex; justify-content: space-between; align-items: center;">
+                <div class="faq-item" style="background: var(--bg-card); margin-bottom: 15px; border-radius: 12px; border: 2px solid var(--border-color); overflow: hidden;">
+                    <div class="faq-question" onclick="toggleFaq(this)" style="padding: 20px; background: rgba(59, 130, 246, 0.2); cursor: pointer; font-weight: bold; color: var(--accent-color); display: flex; justify-content: space-between; align-items: center; font-size: 1rem;">
                         <span>ما هي طرق الدفع المتاحة؟</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: #fff;">
                         <div style="padding: 20px 0;">
-                            <p>نوفر عدة طرق دفع مريحة: التحويل البنكي، STC Pay، URPay، PayPal، وروابط الدفع المباشرة عبر Paylink للشركات المسجلة.</p>
+                            <p style="font-size: 1rem;">نوفر عدة طرق دفع مريحة: التحويل البنكي، STC Pay، URPay، PayPal، وروابط الدفع المباشرة عبر Paylink للشركات المسجلة.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="faq-item" style="background: var(--bg-card); margin-bottom: 15px; border-radius: 10px; border: 2px solid var(--border-color); overflow: hidden;">
-                    <div class="faq-question" onclick="toggleFaq(this)" style="padding: 20px; background: rgba(59, 130, 246, 0.2); cursor: pointer; font-weight: bold; color: var(--accent-color); display: flex; justify-content: space-between; align-items: center;">
+                <div class="faq-item" style="background: var(--bg-card); margin-bottom: 15px; border-radius: 12px; border: 2px solid var(--border-color); overflow: hidden;">
+                    <div class="faq-question" onclick="toggleFaq(this)" style="padding: 20px; background: rgba(59, 130, 246, 0.2); cursor: pointer; font-weight: bold; color: var(--accent-color); display: flex; justify-content: space-between; align-items: center; font-size: 1rem;">
                         <span>هل يمكنني طلب تعديلات على التصميم؟</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: #fff;">
                         <div style="padding: 20px 0;">
-                            <p>بالطبع! نوفر 3 تعديلات مجانية لجميع خدماتنا. إذا كنت بحاجة لتعديلات إضافية، فسنكون سعداء لمناقشة ذلك معك بأسعار مناسبة.</p>
+                            <p style="font-size: 1rem;">بالطبع! نوفر 3 تعديلات مجانية لجميع خدماتنا. إذا كنت بحاجة لتعديلات إضافية، فسنكون سعداء لمناقشة ذلك معك بأسعار مناسبة.</p>
                         </div>
                     </div>
                 </div>
@@ -1698,28 +1769,27 @@
     <section id="contact" class="page-section">
         <div class="container">
             <h2 class="section-title">تواصل معنا</h2>
-            <p style="text-align: center; color: #ccc; margin-bottom: 40px;">نحن هنا لمساعدتك في تحويل أفكارك إلى واقع رقمي مذهل</p>
+            <p style="text-align: center; color: #ccc; margin-bottom: 40px; font-size: 1.1rem;">نحن هنا لمساعدتك في تحويل أفكارك إلى واقع رقمي مذهل</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
                 <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid var(--border-color);">
                     <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 15px;">📱</div>
                     <h4 style="color: var(--accent-color); font-size: 1.2rem; margin: 10px 0; font-weight: bold;">واتساب</h4>
-                    <p>+966 571 653 884</p>
-                    <p style="font-size: 0.9rem; color: #999; margin-top: 5px;">متاح 24/7 للرد السريع</p>
+                    <p style="font-size: 1rem;">متاح 24/7 للرد السريع</p>
                 </div>
                 
                 <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid var(--border-color);">
                     <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 15px;">🕙</div>
                     <h4 style="color: var(--accent-color); font-size: 1.2rem; margin: 10px 0; font-weight: bold;">ساعات العمل</h4>
-                    <p>24/7 دعم مستمر</p>
-                    <p style="font-size: 0.9rem; color: #999; margin-top: 5px;">نرد على استفساراتكم في أسرع وقت</p>
+                    <p style="font-size: 1rem;">24/7 دعم مستمر</p>
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 6px;">نرد على استفساراتكم في أسرع وقت</p>
                 </div>
                 
                 <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid var(--border-color);">
-                    <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 15px;">🌍</div>
+                    <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 15px;">🌐</div>
                     <h4 style="color: var(--accent-color); font-size: 1.2rem; margin: 10px 0; font-weight: bold;">التغطية</h4>
-                    <p>السعودية والخليج</p>
-                    <p style="font-size: 0.9rem; color: #999; margin-top: 5px;">نخدم عملاء في جميع أنحاء الخليج</p>
+                    <p style="font-size: 1rem;">السعودية والخليج</p>
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 6px;">نخدم عملاء في جميع أنحاء الخليج</p>
                 </div>
             </div>
             
@@ -1741,7 +1811,7 @@
                 </div>
                 <div class="footer-social">
                     <a href="https://wa.me/966571653884" title="واتساب" target="_blank">📱</a>
-                    <a href="#" title="تويتر" onclick="showNotification('قريباً - تابعونا!', 'info')">🦅</a>
+                    <a href="#" title="تويتر" onclick="showNotification('قريباً - تابعونا!', 'info')">🐦</a>
                     <a href="#" title="إنستغرام" onclick="showNotification('قريباً - تابعونا!', 'info')">📷</a>
                     <a href="#" title="لينكد إن" onclick="showNotification('قريباً - تابعونا!', 'info')">💼</a>
                     <a href="#" title="يوتيوب" onclick="showNotification('قريباً - تابعونا!', 'info')">🎥</a>
@@ -1751,70 +1821,214 @@
     </footer>
 
     <script>
-        // المتغيرات العامة
         let cart = [];
         let total = 0;
         let currentPage = 'home';
-        // متغيرات الآراء
-        let testimonials = [];
-        let selectedRating = 5;
         
-        // إعدادات Google Sheets
-        const GOOGLE_SHEETS_CONFIG = {
-            // ضع هنا معرف Google Sheet الخاص بك
-            sheetId: 'YOUR_GOOGLE_SHEET_ID',
-            // ضع هنا مفتاح API الخاص بك
-            apiKey: 'YOUR_API_KEY',
-            // اسم الورقة في Google Sheets
-            sheetName: 'testimonials'
+        // Product data
+        const productData = {
+            'diamond-package': {
+                title: 'الباقة الماسية',
+                icon: 'workspace_premium',
+                image: 'https://i.imgur.com/LXxgYQE.png',
+                oldPrice: 700,
+                price: 350,
+                description: 'باقة شاملة ومتكاملة تضم جميع الخدمات المتقدمة لبناء حضورك الرقمي بشكل احترافي ومتميز. هذه الباقة مصممة خصيصاً للشركات والأفراد الذين يسعون للحصول على هوية رقمية قوية ومتكاملة.',
+                features: [
+                    'تصميم كانفا احترافي (15 تصميم متنوع)',
+                    'هوية بصرية كاملة - شعار + بطاقة أعمال + ورقة رسمية',
+                    'تصميم موقع إلكتروني احترافي (8 صفحات)',
+                    'تصميم متجر إلكتروني كامل مع نظام الدفع',
+                    'رابط سنة كاملة (دومين مخصص)',
+                    'استضافة محمية وآمنة (SSL مجاني)',
+                    'تحسين محركات البحث (SEO) متقدم',
+                    'لوحة تحكم كاملة وسهلة الاستخدام',
+                    '5 تعديلات مجانية',
+                    'دعم فني لمدة 6 أشهر',
+                    'تدريب على الاستخدام'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22889811000149903',
+                badge: { text: 'الماسية', color: 'linear-gradient(45deg, #4a90e2, #14b8a6)' }
+            },
+            'gold-package': {
+                title: 'الباقة الذهبية',
+                icon: 'auto_awesome',
+                image: 'https://i.imgur.com/8UzX9IS.png',
+                oldPrice: 500,
+                price: 250,
+                description: 'باقة متوسطة مثالية للشركات الناشئة والأفراد الذين يسعون لبناء حضور رقمي قوي بميزانية معقولة. تشمل أهم الخدمات الأساسية للانطلاق في العالم الرقمي بثقة.',
+                features: [
+                    'تصميم كانفا عالي الجودة (10 تصاميم)',
+                    'تصميم متجر إلكتروني متكامل',
+                    'رابط سنة كاملة (دومين)',
+                    'استضافة مجانية حماية ضعيفة',
+                    'هوية بصرية - شعار + بطاقة أعمال',
+                    'تحسين محركات البحث أساسي',
+                    '4 تعديلات مجانية',
+                    'دعم فني لمدة 3 أشهر',
+                    'تدريب أساسي على النظام'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22890161000149903',
+                badge: { text: 'الذهبية', color: 'linear-gradient(45deg, #f59e0b, #f97316)' }
+            },
+            'silver-package': {
+                title: 'الباقة الفضية',
+                icon: 'star',
+                image: 'https://i.imgur.com/yIGcYRY.png',
+                oldPrice: 300,
+                price: 150,
+                description: 'باقة اقتصادية ومناسبة للمبتدئين والمشاريع الصغيرة التي تريد البدء في العالم الرقمي بتكلفة منخفضة. خيار مثالي لمن يبحث عن الأساسيات بجودة عالية.',
+                features: [
+                    'تصميم كانفا خمس صور',
+                    'تصميم متجر إلكتروني أساسي',
+                    'دومين مجاني بدون اسم مخصص',
+                    'متجر أو موقع أساسي',
+                    'استضافة مجانية حماية ضعيفة',
+                    '3 تعديلات مجانية',
+                    'دعم فني محدود (شهر واحد)',
+                    'شهادة SSL أساسية'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22890281000149903',
+                badge: { text: 'الفضية', color: 'linear-gradient(45deg, #64748b, #475569)' }
+            },
+            'visual-identity': {
+                title: 'هوية بصرية',
+                icon: 'palette',
+                image: 'https://i.imgur.com/MArsLUn.png',
+                oldPrice: 140,
+                price: 70,
+                description: 'احصل على هوية بصرية متكاملة واحترافية تعكس شخصية علامتك التجارية وتميزها عن المنافسين. تشمل جميع العناصر الضرورية لبناء هوية قوية ومتماسكة.',
+                features: [
+                    'تصميم شعار احترافي وفريد',
+                    'بطاقة أعمال أنيقة ومميزة',
+                    'دليل الاستخدام والهوية',
+                    'ملفات بجودة عالية (AI, PNG, JPG)',
+                    '3 تعديلات مجانية',
+                    'تسليم خلال 3-5 أيام',
+                    'ملكية كاملة للتصميم',
+                    'دعم فني لمدة شهر'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22736671000149903'
+            },
+            'website': {
+                title: 'موقع متكامل',
+                icon: 'language',
+                image: 'https://i.imgur.com/OfWnjWR.png',
+                oldPrice: 200,
+                price: 100,
+                description: 'موقع إلكتروني احترافي ومتجاوب مع جميع الأجهزة، محسن لمحركات البحث ومصمم بأحدث التقنيات. مثالي للشركات والمؤسسات التي تريد حضوراً قوياً على الإنترنت.',
+                features: [
+                    'تصميم متجاوب وعصري',
+                    '5 صفحات رئيسية متكاملة',
+                    'تحسين محركات البحث (SEO)',
+                    'استضافة مجانية لشهر كامل',
+                    'شهادة SSL مجانية للأمان',
+                    'دعم فني لمدة شهر',
+                    'تدريب على إدارة المحتوى',
+                    'متوافق مع جميع المتصفحات'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22736701000149903'
+            },
+            'ecommerce': {
+                title: 'متجر شامل',
+                icon: 'storefront',
+                image: 'https://i.imgur.com/uuegemQ.png',
+                oldPrice: 220,
+                price: 110,
+                description: 'متجر إلكتروني متكامل مع أنظمة دفع متقدمة ولوحة تحكم شاملة لإدارة المنتجات والطلبات. الحل المثالي لبدء تجارتك الإلكترونية بثقة واحترافية.',
+                features: [
+                    'لوحة تحكم كاملة ومتقدمة',
+                    'أنظمة دفع متعددة وآمنة',
+                    'إدارة المنتجات والمخزون',
+                    'تقارير المبيعات التفصيلية',
+                    'دعم فني لـ 3 أشهر',
+                    'تدريب على الاستخدام',
+                    'تحسين محركات البحث',
+                    'تطبيق جوال اختياري'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22736731000149903'
+            },
+            'fivem': {
+                title: 'سيرفر FiveM',
+                icon: 'sports_esports',
+                image: 'https://i.imgur.com/SSYS4eo.png',
+                oldPrice: 180,
+                price: 90,
+                description: 'موقع مخصص لسيرفرات FiveM مع لوحات تحكم متقدمة وتصميم جذاب مناسب لمجتمع الألعاب. يوفر تجربة تفاعلية ممتازة للاعبين ومديري السيرفرات.',
+                features: [
+                    'تصميم مخصص للألعاب',
+                    'لوحة تحكم اللاعبين',
+                    'إحصائيات السيرفر المباشرة',
+                    'نظام العضويات والرتب',
+                    'تحديثات فورية',
+                    'دعم Discord Bot',
+                    'قوائم اللاعبين النشطين',
+                    'نظام الإنجازات'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22736831000149903'
+            },
+            'canva': {
+                title: 'قوالب Canva',
+                icon: 'analytics',
+                image: 'https://i.imgur.com/pQWp2Yp.png',
+                oldPrice: 100,
+                price: 50,
+                description: 'مجموعة متكاملة من القوالب الاحترافية للكانفا مناسبة لجميع احتياجاتك التسويقية والإعلانية. تصاميم عصرية وجذابة تساعدك في إنشاء محتوى بصري مذهل.',
+                features: [
+                    '10 قوالب متنوعة وعصرية',
+                    'قابلة للتخصيص بسهولة',
+                    'جودة عالية وألوان جذابة',
+                    'مناسبة لوسائل التواصل',
+                    'إرشادات الاستخدام المفصلة',
+                    'تحديثات مجانية',
+                    'ملكية كاملة للقوالب',
+                    'دعم فني أساسي'
+                ],
+                paymentLink: 'https://payment.paylink.sa/pay/product/22736861000149903'
+            }
         };
-        
-        // رابط Google Sheets API
-        const SHEETS_API_URL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.sheetId}/values/${GOOGLE_SHEETS_CONFIG.sheetName}?key=${GOOGLE_SHEETS_CONFIG.apiKey}`;
 
-        // إظهار الصفحة الرئيسية فوراً عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
-            // التأكد من إظهار الصفحة الرئيسية
             showPage('home');
-            
-            // تحديث عرض السلة
             updateCartDisplay();
-            
-            // تفعيل انيميشن الصورة الرئيسية
             initHeroAnimations();
             
-            // إعداد نموذج الآراء
-            const testimonialForm = document.getElementById('testimonial-form');
-            if (testimonialForm) {
-                testimonialForm.addEventListener('submit', handleTestimonialSubmit);
-            }
+            document.addEventListener('click', function(e) {
+                const navLinks = document.getElementById('nav-links');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                
+                if (navLinks && menuBtn && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                    closeMobileMenu();
+                }
+                
+                const overlay = document.getElementById('overlay');
+                if (overlay && e.target === overlay) {
+                    closeCart();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeCart();
+                    closeMobileMenu();
+                }
+            });
         });
 
-        // إدارة الصفحات
         window.showPage = function(pageId) {
             if (currentPage === pageId) return;
             
-            // إخفاء جميع الصفحات
             const allSections = document.querySelectorAll('.page-section');
             allSections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // إظهار الصفحة المطلوبة
             const targetSection = document.getElementById(pageId);
             if (targetSection) {
                 targetSection.classList.add('active');
                 currentPage = pageId;
-                
-                // تحديث الرابط النشط في القائمة
                 updateActiveNavLink(pageId);
                 
-                // إذا كانت صفحة المميزات، لا حاجة لإعدادات خاصة
-                if (pageId === 'features') {
-                    // صفحة المميزات جاهزة
-                }
-                
-                // التمرير إلى أعلى الصفحة
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -1822,7 +2036,121 @@
             }
         }
 
-        // تحديث الرابط النشط في القائمة
+        window.showProductDetail = function(productId) {
+            // Make entire product card clickable by handling click on the card
+            document.addEventListener('click', function(e) {
+                const productCard = e.target.closest('.product-card');
+                if (productCard && !e.target.closest('.product-details-btn')) {
+                    const productId = productCard.getAttribute('data-product');
+                    if (productId) {
+                        showProductDetail(productId);
+                    }
+                }
+            });
+
+            const product = productData[productId];
+            if (!product) return;
+
+            const detailContent = document.getElementById('product-detail-content');
+            const discountPercentage = Math.round((1 - product.price / (product.oldPrice || product.price)) * 100);
+            
+            detailContent.innerHTML = `
+                <button class="back-button" onclick="showPage('store')">
+                    <span class="material-icons">arrow_back</span>
+                    العودة للمتجر
+                </button>
+                
+                <div class="product-detail-content">
+                    <div class="product-detail-image">
+                        ${product.badge ? `<div class="package-badge" style="background: ${product.badge.color};">${product.badge.text}</div>` : ''}
+                        ${product.oldPrice ? `<div class="discount-badge">خصم ${discountPercentage}%</div>` : ''}
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    
+                    <div class="product-detail-info">
+                        <h1 class="product-detail-title">
+                            <span class="material-icons">${product.icon}</span>
+                            ${product.title}
+                        </h1>
+                        
+                        <p class="product-detail-description">${product.description}</p>
+                        
+                        <div class="product-features">
+                            <h3 class="features-title">
+                                <span class="material-icons">check_circle</span>
+                                ما يشمله ${product.title}:
+                            </h3>
+                            <ul class="features-list">
+                                ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="product-price-section">
+                            ${product.oldPrice ? `<div class="old-price">السعر العادي: ${product.oldPrice} ريال</div>` : ''}
+                            <div class="current-price">${product.price} ريال</div>
+                            <div class="price-note">شامل جميع الخدمات المذكورة</div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            ${product.paymentLink.includes('package') ? 
+                                `<button class="buy-now" onclick="buyPackage('${product.paymentLink}')">
+                                    <span class="material-icons">payment</span>
+                                    اشتر الآن
+                                </button>` :
+                                `<button class="add-to-cart" onclick="addToCart('${productId}', '${product.title}', ${product.price}, '${product.paymentLink}')">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                    أضف للسلة
+                                </button>
+                                <button class="buy-now" onclick="buyNow('${productId}', '${product.title}', ${product.price}, '${product.paymentLink}')">
+                                    <span class="material-icons">payment</span>
+                                    اشتر الآن
+                                </button>`
+                            }
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="terms-title">
+                        <span class="material-icons">gavel</span>
+                        الشروط والأحكام
+                    </h3>
+                    <div class="terms-content">
+                        <h4>شروط الخدمة:</h4>
+                        <ul>
+                            <li>يتم البدء في العمل بعد استلام 50% من قيمة المشروع</li>
+                            <li>المدة المحددة للتسليم تبدأ من تاريخ استلام جميع المواد المطلوبة</li>
+                            <li>يحق للعميل طلب تعديلات حسب العدد المحدد في كل باقة</li>
+                            <li>في حالة التأخير من جانب العميل، قد تتأثر مواعيد التسليم</li>
+                        </ul>
+                        
+                        <h4>سياسة الاسترداد:</h4>
+                        <ul>
+                            <li>يمكن استرداد المبلغ كاملاً قبل البدء في العمل</li>
+                            <li>بعد البدء في العمل، يتم استرداد 50% في حالة عدم الرضا</li>
+                            <li>لا يمكن الاسترداد بعد التسليم النهائي والموافقة عليه</li>
+                        </ul>
+                        
+                        <h4>الدعم الفني:</h4>
+                        <ul>
+                            <li>دعم فني مجاني حسب المدة المحددة في كل باقة</li>
+                            <li>الدعم يشمل حل المشاكل التقنية والاستفسارات</li>
+                            <li>لا يشمل الدعم التطويرات الإضافية أو التعديلات الجديدة</li>
+                        </ul>
+                        
+                        <h4>حقوق الملكية:</h4>
+                        <ul>
+                            <li>العميل يحصل على الملكية الكاملة للتصميم بعد السداد</li>
+                            <li>متجر Moon يحتفظ بالحق في عرض العمل كنموذج في معرض الأعمال</li>
+                            <li>جميع الخدمات محمية بموجب قانون حماية الملكية الفكرية</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            showPage('product-detail');
+        }
+
         function updateActiveNavLink(pageId) {
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => {
@@ -1835,510 +2163,106 @@
             }
         }
 
-        // تفعيل انيميشن الصفحة الرئيسية
         function initHeroAnimations() {
             const heroImage = document.getElementById('heroImage');
             
             if (heroImage) {
-                // عند تحميل الصورة بنجاح
                 heroImage.onload = function() {
-                    console.log('تم تحميل الصورة بنجاح!');
                     this.classList.add('loaded');
                 };
                 
-                // إذا كانت الصورة محملة بالفعل
                 if (heroImage.complete && heroImage.naturalHeight !== 0) {
                     heroImage.classList.add('loaded');
                 }
                 
-                // في حالة فشل التحميل
                 heroImage.onerror = function() {
-                    console.log('فشل تحميل الصورة، جاري استخدام البديل...');
-                    this.src = 'https://via.placeholder.com/500x400/3b82f6/ffffff?text=Moon+Store';
+                    this.src = 'https://via.placeholder.com/400x300/3b82f6/ffffff?text=Moon+Store';
                 };
             }
         }
 
-        // فتح الصورة في موديال
-        window.openImageModal = function(imageSrc) {
-            // إنشاء الموديال إذا لم يكن موجوداً
-            let modal = document.getElementById('image-modal');
-            if (!modal) {
-                modal = document.createElement('div');
-                modal.id = 'image-modal';
-                modal.className = 'image-modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <span class="close-modal" onclick="closeImageModal()">&times;</span>
-                        <img id="modal-image" src="" alt="Moon Store Design">
-                        <div class="modal-overlay-text">
-                            <h3>🌙 مرحباً بك في متجر Moon</h3>
-                            <p>اكتشف أفضل خدمات التصميم الرقمي</p>
-                        </div>
-                    </div>
-                `;
-                modal.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.95);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 5000;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all 0.5s ease;
-                    backdrop-filter: blur(15px);
-                `;
-                document.body.appendChild(modal);
+        // دالة شراء الباقات مباشرة
+        window.buyPackage = function(paymentLink) {
+            const clickedButton = event.target.closest('.buy-now');
+            
+            if (clickedButton) {
+                const originalText = clickedButton.innerHTML;
+                clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">check_circle</span>تم التوجيه...';
+                clickedButton.style.background = 'linear-gradient(45deg, var(--success-color), #059669)';
+                clickedButton.disabled = true;
             }
-            
-            const modalImage = document.getElementById('modal-image');
-            const modalContent = modal.querySelector('.modal-content');
-            
-            modalImage.src = imageSrc;
-            modalImage.style.cssText = `
-                max-width: 80%;
-                max-height: 80%;
-                border-radius: 25px;
-                box-shadow: 0 25px 80px rgba(59, 130, 246, 0.6);
-                transform: scale(0.7) rotateY(15deg);
-                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-                object-fit: contain;
-            `;
-            
-            modalContent.style.cssText = `
-                position: relative;
-                text-align: center;
-                animation: modalEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            `;
-            
-            // نص ترحيبي
-            const overlayText = modal.querySelector('.modal-overlay-text');
-            overlayText.style.cssText = `
-                position: absolute;
-                bottom: -80px;
-                left: 50%;
-                transform: translateX(-50%);
-                color: white;
-                text-align: center;
-                opacity: 0;
-                animation: textSlideUp 1s ease 0.5s forwards;
-            `;
-            
-            overlayText.querySelector('h3').style.cssText = `
-                font-size: 1.8rem;
-                margin-bottom: 10px;
-                background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            `;
-            
-            overlayText.querySelector('p').style.cssText = `
-                font-size: 1.1rem;
-                color: #cbd5e1;
-            `;
-            
-            modal.style.opacity = '1';
-            modal.style.visibility = 'visible';
-            document.body.style.overflow = 'hidden';
+
+            if (paymentLink && paymentLink !== '#') {
+                setTimeout(() => {
+                    window.open(paymentLink, '_blank');
+                    showNotification('تم توجيهك لصفحة الدفع!', 'success');
+                }, 1000);
+            } else {
+                showNotification('رابط الدفع غير متوفر!', 'error');
+            }
             
             setTimeout(() => {
-                modalImage.style.transform = 'scale(1) rotateY(0deg)';
-            }, 200);
-            
-            // إضافة زر الإغلاق المحسن
-            const closeBtn = modal.querySelector('.close-modal');
-            closeBtn.style.cssText = `
-                position: absolute;
-                top: 20px;
-                right: 30px;
-                color: white;
-                font-size: 3rem;
-                cursor: pointer;
-                z-index: 5001;
-                transition: all 0.3s ease;
-                background: rgba(239, 68, 68, 0.8);
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                backdrop-filter: blur(10px);
-            `;
-            
-            closeBtn.onmouseover = function() {
-                this.style.background = 'rgba(239, 68, 68, 1)';
-                this.style.transform = 'scale(1.1)';
-            };
-            
-            closeBtn.onmouseout = function() {
-                this.style.background = 'rgba(239, 68, 68, 0.8)';
-                this.style.transform = 'scale(1)';
-            };
-            
-            // إغلاق عند النقر على الخلفية
-            modal.onclick = function(e) {
-                if (e.target === modal) {
-                    closeImageModal();
+                if (clickedButton) {
+                    clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">payment</span>اشتر الآن';
+                    clickedButton.style.background = '';
+                    clickedButton.disabled = false;
                 }
-            };
+            }, 3000);
         }
 
-        window.closeImageModal = function() {
-            const modal = document.getElementById('image-modal');
-            if (modal) {
-                const modalImage = document.getElementById('modal-image');
-                modalImage.style.transform = 'scale(0.8) rotateY(15deg)';
-                
-                setTimeout(() => {
-                    modal.style.opacity = '0';
-                    modal.style.visibility = 'hidden';
-                    document.body.style.overflow = 'auto';
-                }, 100);
-            }
-        }
-
-        // إدارة النجوم للتقييم
-        function initRatingStars() {
-            const stars = document.querySelectorAll('#rating-stars span');
-            const ratingInput = document.getElementById('customer-rating');
+        // دالة الشراء الفوري للمنتجات الفردية
+        window.buyNow = function(id, name, price, paymentLink) {
+            const clickedButton = event.target.closest('.buy-now');
             
-            if (!stars.length) return;
-
-            stars.forEach((star, index) => {
-                star.addEventListener('mouseenter', function() {
-                    updateStarsDisplay(index + 1, true);
-                });
-                
-                star.addEventListener('mouseleave', function() {
-                    updateStarsDisplay(selectedRating, false);
-                });
-                
-                star.addEventListener('click', function() {
-                    selectedRating = index + 1;
-                    ratingInput.value = selectedRating;
-                    updateStarsDisplay(selectedRating, false);
-                });
-            });
-            
-            // تعيين التقييم الافتراضي
-            updateStarsDisplay(selectedRating, false);
-        }
-
-        function updateStarsDisplay(rating, isHover) {
-            const stars = document.querySelectorAll('#rating-stars span');
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.style.opacity = '1';
-                    star.style.transform = isHover ? 'scale(1.2)' : 'scale(1)';
-                    star.style.filter = 'brightness(1.2)';
-                } else {
-                    star.style.opacity = '0.3';
-                    star.style.transform = 'scale(1)';
-                    star.style.filter = 'brightness(0.7)';
-                }
-            });
-        }
-
-        // إضافة رأي جديد إلى Google Sheets
-        async function addTestimonialToSheets(name, job, rating, review) {
-            try {
-                showNotification('⏳ جاري إرسال رأيك...', 'info');
-                
-                // إنشاء URL لـ Google Apps Script أو استخدام Google Forms
-                const formData = new FormData();
-                formData.append('name', name);
-                formData.append('job', job);
-                formData.append('rating', rating);
-                formData.append('review', review);
-                formData.append('date', new Date().toLocaleDateString('ar-SA'));
-                formData.append('timestamp', new Date().toISOString());
-
-                // يمكنك استخدام Google Forms أو Google Apps Script
-                // هذا مثال لـ Google Apps Script
-                const scriptUrl = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
-                
-                const response = await fetch(scriptUrl, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    showNotification('✅ تم إرسال رأيك بنجاح! سيظهر بعد المراجعة.', 'success');
-                    
-                    // إعادة تعيين النموذج
-                    document.getElementById('testimonial-form').reset();
-                    selectedRating = 5;
-                    updateStarsDisplay(5, false);
-                    document.getElementById('customer-rating').value = 5;
-                    
-                    // إعادة تحميل التقييمات
-                    loadTestimonialsFromSheets();
-                } else {
-                    throw new Error('فشل في إرسال البيانات');
-                }
-                
-            } catch (error) {
-                console.error('خطأ في إرسال التقييم:', error);
-                showNotification('❌ حدث خطأ في الإرسال. جاري المحاولة عبر الواتساب...', 'error');
-                
-                // البديل: إرسال عبر الواتساب
-                sendReviewViaWhatsApp(name, job, rating, review);
-            }
-        }
-
-        // إرسال التقييم عبر الواتساب كبديل
-        function sendReviewViaWhatsApp(name, job, rating, review) {
-            const stars = '⭐'.repeat(rating);
-            const message = `تقييم جديد لمتجر Moon:\n\n` +
-                          `👤 الاسم: ${name}\n` +
-                          `💼 الوظيفة: ${job}\n` +
-                          `${stars} التقييم: ${rating}/5\n` +
-                          `📝 الرأي: ${review}\n\n` +
-                          `📅 التاريخ: ${new Date().toLocaleDateString('ar-SA')}`;
-            
-            const whatsappUrl = `https://wa.me/966571653884?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            
-            showNotification('📱 تم فتح الواتساب لإرسال رأيك!', 'info');
-        }
-
-        // تحميل التقييمات من Google Sheets
-        async function loadTestimonialsFromSheets() {
-            try {
-                // إظهار رسالة التحميل
-                const loadingDiv = document.getElementById('loading-testimonials');
-                const noTestimonialsDiv = document.getElementById('no-testimonials');
-                const containerDiv = document.getElementById('testimonials-container');
-                
-                if (loadingDiv) loadingDiv.style.display = 'block';
-                if (noTestimonialsDiv) noTestimonialsDiv.style.display = 'none';
-                if (containerDiv) containerDiv.style.display = 'none';
-
-                // إذا لم يكن API مُعد، استخدم البيانات المحلية
-                if (!GOOGLE_SHEETS_CONFIG.apiKey || GOOGLE_SHEETS_CONFIG.apiKey === 'YOUR_API_KEY') {
-                    console.log('Google Sheets API غير مُعد، استخدام البيانات المحلية');
-                    if (loadingDiv) loadingDiv.style.display = 'none';
-                    displayTestimonials();
-                    return;
-                }
-
-                const response = await fetch(SHEETS_API_URL);
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    
-                    if (data.values && data.values.length > 1) {
-                        // تحويل بيانات الجدول إلى تقييمات
-                        testimonials = data.values.slice(1).map((row, index) => ({
-                            id: index + 1,
-                            name: row[0] || 'غير محدد',
-                            job: row[1] || 'غير محدد',
-                            rating: parseInt(row[2]) || 5,
-                            review: row[3] || '',
-                            date: row[4] || new Date().toLocaleDateString('ar-SA')
-                        }));
-                        
-                        displayTestimonials();
-                    } else {
-                        if (noTestimonialsDiv) noTestimonialsDiv.style.display = 'block';
-                    }
-                } else {
-                    console.error('خطأ في تحميل التقييمات من Google Sheets');
-                    displayTestimonials(); // استخدام البيانات المحلية
-                }
-                
-                if (loadingDiv) loadingDiv.style.display = 'none';
-                
-            } catch (error) {
-                console.error('خطأ في الاتصال بـ Google Sheets:', error);
-                
-                // إخفاء رسالة التحميل وعرض البيانات المحلية
-                const loadingDiv = document.getElementById('loading-testimonials');
-                if (loadingDiv) loadingDiv.style.display = 'none';
-                
-                displayTestimonials();
-                
-                showNotification('⚠️ لا يمكن الاتصال بقاعدة البيانات، عرض البيانات المحلية', 'info');
-            }
-        }
-
-        // عرض الآراء
-        function displayTestimonials() {
-            const container = document.getElementById('testimonials-container');
-            const noTestimonialsMsg = document.getElementById('no-testimonials');
-            const loadingMsg = document.getElementById('loading-testimonials');
-            
-            if (!container) return;
-
-            // إخفاء رسالة التحميل
-            if (loadingMsg) loadingMsg.style.display = 'none';
-
-            if (testimonials.length === 0) {
-                container.style.display = 'none';
-                if (noTestimonialsMsg) noTestimonialsMsg.style.display = 'block';
-                return;
-            }
-
-            container.style.display = 'grid';
-            if (noTestimonialsMsg) noTestimonialsMsg.style.display = 'none';
-
-            container.innerHTML = '';
-            
-            testimonials.forEach(testimonial => {
-                const testimonialCard = document.createElement('div');
-                testimonialCard.className = 'testimonial-card';
-                testimonialCard.style.cssText = `
-                    background: var(--bg-card);
-                    padding: 30px;
-                    border-radius: 20px;
-                    border: 2px solid var(--border-color);
-                    position: relative;
-                    animation: slideInUp 0.6s ease;
-                    transition: all 0.3s ease;
-                `;
-
-                const stars = '⭐'.repeat(testimonial.rating);
-                const firstLetter = testimonial.name.charAt(0).toUpperCase();
-
-                testimonialCard.innerHTML = `
-                    <div style="display: flex; align-items: center; margin-bottom: 20px; gap: 15px;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: white;">${firstLetter}</div>
-                        <div>
-                            <h4 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 5px;">${testimonial.name}</h4>
-                            <div style="color: #999; font-size: 0.9rem;">${testimonial.job}</div>
-                            <div style="color: #666; font-size: 0.8rem; margin-top: 3px;">${testimonial.date}</div>
-                        </div>
-                        <div style="margin-left: auto;">
-                            <span style="background: linear-gradient(45deg, var(--success-color), #059669); color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: bold;">✓ مُوثق</span>
-                        </div>
-                    </div>
-                    <div style="color: #ffa500; font-size: 1.2rem; margin-bottom: 15px;">${stars}</div>
-                    <p style="color: var(--text-primary); line-height: 1.7;">${testimonial.review}</p>
-                `;
-
-                container.appendChild(testimonialCard);
-            });
-        }
-
-        // حذف رأي
-        function removeTestimonial(id) {
-            if (confirm('هل أنت متأكد من حذف هذا الرأي؟')) {
-                testimonials = testimonials.filter(testimonial => testimonial.id !== id);
-                displayTestimonials();
-                showNotification('🗑️ تم حذف الرأي بنجاح', 'info');
-            }
-        }
-
-        // معالج إرسال النموذج
-        function handleTestimonialSubmit(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('customer-name').value.trim();
-            const job = document.getElementById('customer-job').value.trim();
-            const rating = document.getElementById('customer-rating').value;
-            const review = document.getElementById('customer-review').value.trim();
-
-            // التحقق من البيانات
-            if (!name || !job || !review) {
-                showNotification('⚠️ يرجى ملء جميع الحقول المطلوبة', 'error');
-                return;
-            }
-
-            if (name.length < 2) {
-                showNotification('⚠️ يرجى إدخال اسم صحيح', 'error');
-                return;
-            }
-
-            if (review.length < 10) {
-                showNotification('⚠️ يرجى كتابة رأي أكثر تفصيلاً (10 أحرف على الأقل)', 'error');
-                return;
-            }
-
-            // إرسال إلى Google Sheets
-            addTestimonialToSheets(name, job, rating, review);
-        }
-
-        // إضافة منتج للسلة
-        window.addToCart = function(id, name, price, paymentLink) {
-            console.log('تم النقر على الزر:', id, name, price, paymentLink);
-            
-            // تحقق من وجود المتغيرات
-            if (!id || !name || !price) {
-                showNotification('⚠️ خطأ في بيانات المنتج!', 'error');
-                return false;
-            }
-
-            // العثور على الزر والكارت
-            const clickedButton = event.target.closest('.add-to-cart');
-            const productCard = event.target.closest('.product-card');
-            
-            // انيميشن النقر على الزر
             if (clickedButton) {
-                clickedButton.classList.add('clicked');
-                clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">check_circle</span>تم الإضافة!';
+                const originalText = clickedButton.innerHTML;
+                clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">check_circle</span>تم التوجيه...';
+                clickedButton.style.background = 'linear-gradient(45deg, var(--success-color), #059669)';
+                clickedButton.disabled = true;
             }
 
-            // للباقات - انتقال مباشر للدفع
-            if (id.includes('package')) {
-                console.log('باقة تم اختيارها، التوجه للدفع...');
-                if (paymentLink && paymentLink !== '#') {
-                    setTimeout(() => {
-                        window.open(paymentLink, '_blank');
-                        showNotification('🔗 تم توجيهك لصفحة الدفع!', 'success');
-                    }, 800);
-                } else {
-                    showNotification('⚠️ رابط الدفع غير متوفر!', 'error');
-                }
-                
-                // إعادة النص بعد وقت
+            if (paymentLink && paymentLink !== '#') {
                 setTimeout(() => {
-                    if (clickedButton) {
-                        clickedButton.classList.remove('clicked');
-                        clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>اختر الباقة';
-                    }
-                }, 2000);
-                
+                    window.open(paymentLink, '_blank');
+                    showNotification('تم توجيهك لصفحة الدفع!', 'success');
+                }, 1000);
+            } else {
+                showNotification('رابط الدفع غير متوفر!', 'error');
+            }
+            
+            setTimeout(() => {
+                if (clickedButton) {
+                    clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">payment</span>اشتر الآن';
+                    clickedButton.style.background = '';
+                    clickedButton.disabled = false;
+                }
+            }, 3000);
+        }
+
+        window.addToCart = function(id, name, price, paymentLink) {
+            if (!id || !name || !price) {
+                showNotification('خطأ في بيانات المنتج!', 'error');
                 return false;
             }
 
-            // للمنتجات العادية - التحقق من عدد المنتجات أولاً
-            console.log('منتج عادي، فحص السلة...');
+            const clickedButton = event.target.closest('.add-to-cart');
             
-            // التحقق من وجود منتج آخر في السلة (حد أقصى منتج واحد)
+            if (clickedButton) {
+                const originalText = clickedButton.innerHTML;
+                clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">check_circle</span>تم الإضافة!';
+                clickedButton.style.background = 'linear-gradient(45deg, var(--success-color), #059669)';
+            }
+
             if (cart.length > 0 && !cart.find(item => item.id === id)) {
-                showNotification('⚠️ يمكنك شراء منتج واحد فقط في كل طلب! يرجى إنهاء الطلب الحالي أولاً.', 'error');
+                showNotification('يمكنك شراء منتج واحد فقط في كل طلب! يرجى إنهاء الطلب الحالي أولاً.', 'error');
                 
-                // انيميشن تحذيري للسلة
-                const cartIcon = document.querySelector('.cart-icon');
-                if (cartIcon) {
-                    cartIcon.style.animation = 'cartShake 0.6s ease';
-                    setTimeout(() => {
-                        cartIcon.style.animation = '';
-                    }, 600);
-                }
-                
-                // إعادة النص
                 setTimeout(() => {
                     if (clickedButton) {
-                        clickedButton.classList.remove('clicked');
-                        clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">block</span>مطلوب إنهاء الطلب';
-                        clickedButton.style.background = 'linear-gradient(45deg, #ef4444, #dc2626)';
-                        
-                        setTimeout(() => {
-                            clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
-                            clickedButton.style.background = '';
-                        }, 3000);
+                        clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
+                        clickedButton.style.background = '';
                     }
-                }, 500);
+                }, 2500);
                 
-                // فتح السلة لإظهار المنتج الموجود
                 setTimeout(() => {
                     toggleCart();
                 }, 1000);
@@ -2346,139 +2270,51 @@
                 return false;
             }
             
-            // التحقق من وجود نفس العنصر مسبقاً
             const existingItem = cart.find(item => item.id === id);
             if (existingItem) {
-                showNotification('⏰ هذا المنتج موجود في السلة بالفعل!', 'info');
+                showNotification('هذا المنتج موجود في السلة بالفعل!', 'info');
                 
-                // إعادة النص
                 setTimeout(() => {
                     if (clickedButton) {
-                        clickedButton.classList.remove('clicked');
-                        clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">inventory</span>موجود في السلة';
-                        clickedButton.style.background = 'linear-gradient(45deg, #f59e0b, #f97316)';
-                        
-                        setTimeout(() => {
-                            clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
-                            clickedButton.style.background = '';
-                        }, 3000);
+                        clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
+                        clickedButton.style.background = '';
                     }
-                }, 500);
+                }, 2500);
                 
                 setTimeout(() => {
                     toggleCart();
-                }, 500);
+                }, 800);
                 return false;
             }
 
-            // انيميشن الكارت
-            if (productCard) {
-                productCard.classList.add('added');
-                setTimeout(() => {
-                    productCard.classList.remove('added');
-                }, 1000);
-            }
-
-            // إنشاء أيقونة طائرة
-            createFlyingIcon(clickedButton);
-
-            // إضافة العنصر الجديد
             cart.push({
                 id: id,
                 name: name,
                 price: price,
                 paymentLink: paymentLink
             });
-
-            console.log('تم إضافة المنتج للسلة:', cart);
             
-            // انيميشن السلة
-            const cartIcon = document.querySelector('.cart-icon');
-            const cartCount = document.querySelector('.cart-count');
-            
-            if (cartIcon && cartCount) {
-                setTimeout(() => {
-                    cartIcon.classList.add('shake');
-                    cartCount.classList.add('pulse');
-                    
-                    setTimeout(() => {
-                        cartIcon.classList.remove('shake');
-                        cartCount.classList.remove('pulse');
-                    }, 800);
-                }, 600);
-            }
-
-            // تحديث العرض
             setTimeout(() => {
                 updateCartDisplay();
-            }, 700);
+            }, 800);
             
-            showNotification('✅ تم إضافة المنتج للسلة بنجاح!', 'success');
+            showNotification('تم إضافة المنتج للسلة بنجاح!', 'success');
 
-            // إعادة النص الأصلي
             setTimeout(() => {
                 if (clickedButton) {
-                    clickedButton.classList.remove('clicked');
                     clickedButton.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
+                    clickedButton.style.background = '';
                 }
-            }, 2000);
+            }, 2500);
 
-            // فتح السلة تلقائياً
             setTimeout(() => {
                 toggleCart();
-            }, 1500);
+            }, 1800);
 
             return false;
         }
 
-        // إنشاء أيقونة طائرة للسلة - محسنة لتجنب التضليل
-        function createFlyingIcon(button) {
-            if (!button) return;
-            
-            const cartIcon = document.querySelector('.cart-icon');
-            if (!cartIcon) return;
-
-            // إحداثيات الزر
-            const buttonRect = button.getBoundingClientRect();
-            const cartRect = cartIcon.getBoundingClientRect();
-
-            // إنشاء الأيقونة الطائرة
-            const flyingIcon = document.createElement('div');
-            flyingIcon.className = 'flying-product';
-            flyingIcon.innerHTML = '🛒';
-            
-            // تحديد الموضع الدقيق
-            flyingIcon.style.left = (buttonRect.left + buttonRect.width / 2) + 'px';
-            flyingIcon.style.top = (buttonRect.top + buttonRect.height / 2) + 'px';
-            flyingIcon.style.position = 'fixed';
-            flyingIcon.style.zIndex = '9999';
-            flyingIcon.style.pointerEvents = 'none';
-
-            document.body.appendChild(flyingIcon);
-
-            // حساب المسار بدقة أكبر
-            const deltaX = (cartRect.left + cartRect.width / 2) - (buttonRect.left + buttonRect.width / 2);
-            const deltaY = (cartRect.top + cartRect.height / 2) - (buttonRect.top + buttonRect.height / 2);
-
-            // استخدام requestAnimationFrame لضمان سلاسة الحركة
-            requestAnimationFrame(() => {
-                flyingIcon.style.transition = 'all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                flyingIcon.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3) rotate(360deg)`;
-                flyingIcon.style.opacity = '0';
-            });
-
-            // حذف الأيقونة بعد الانتهاء
-            setTimeout(() => {
-                if (document.body.contains(flyingIcon)) {
-                    document.body.removeChild(flyingIcon);
-                }
-            }, 1100);
-        }
-
-        // تحديث عرض السلة
         function updateCartDisplay() {
-            console.log('تحديث عرض السلة، العناصر الحالية:', cart.length);
-            
             const cartCount = document.getElementById('cart-count');
             const cartItems = document.getElementById('cart-items');
             const cartFooter = document.getElementById('cart-footer');
@@ -2486,12 +2322,8 @@
 
             if (cartCount) {
                 cartCount.textContent = cart.length;
-                // إظهار العدد حتى لو كان صفر
                 cartCount.style.display = 'flex';
             }
-
-            // تحديث حالة الأزرار حسب حالة السلة
-            updateButtonStates();
 
             if (cart.length === 0) {
                 if (cartItems) {
@@ -2511,10 +2343,8 @@
                 return;
             }
 
-            // حساب الإجمالي
             total = cart.reduce((sum, item) => sum + item.price, 0);
 
-            // عرض العناصر
             let itemsHTML = '';
             cart.forEach((item, index) => {
                 itemsHTML += `
@@ -2537,107 +2367,16 @@
             if (cartFooter) {
                 cartFooter.style.display = 'block';
             }
-            
-            console.log('تم تحديث السلة بنجاح، الإجمالي:', total);
         }
 
-        // تحديث حالة جميع الأزرار
-        function updateButtonStates() {
-            const allAddButtons = document.querySelectorAll('.add-to-cart');
-            
-            allAddButtons.forEach(button => {
-                const productCard = button.closest('.product-card');
-                const productId = productCard ? productCard.getAttribute('data-product') : null;
-                
-                // إذا كانت السلة فارغة أو تحتوي على نفس المنتج
-                if (cart.length === 0 || (productId && cart.find(item => item.id === productId))) {
-                    // الزر نشط
-                    button.style.opacity = '1';
-                    button.style.pointerEvents = 'auto';
-                    button.style.background = '';
-                    
-                    if (productId && !productId.includes('package')) {
-                        if (cart.find(item => item.id === productId)) {
-                            button.innerHTML = '<span class="material-icons" style="margin-left: 8px;">inventory</span>في السلة';
-                        } else {
-                            button.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
-                        }
-                    }
-                } else {
-                    // الزر معطل
-                    if (productId && !productId.includes('package')) {
-                        button.style.opacity = '0.6';
-                        button.style.background = 'linear-gradient(45deg, #6b7280, #4b5563)';
-                        button.innerHTML = '<span class="material-icons" style="margin-left: 8px;">block</span>أنه الطلب أولاً';
-                        
-                        // إضافة تأثير عند محاولة النقر
-                        button.onclick = function(e) {
-                            e.preventDefault();
-                            showNotification('⚠️ يرجى إنهاء الطلب الحالي أولاً!', 'warning');
-                            
-                            // انيميشن السلة التحذيري
-                            const cartIcon = document.querySelector('.cart-icon');
-                            if (cartIcon) {
-                                cartIcon.classList.add('warning');
-                                setTimeout(() => {
-                                    cartIcon.classList.remove('warning');
-                                }, 600);
-                            }
-                            
-                            return false;
-                        };
-                    }
-                }
-            });
-        }
-
-        // حذف عنصر من السلة
         function removeFromCart(index) {
             const removedItem = cart[index];
             cart.splice(index, 1);
             
-            // انيميشن عند الحذف
-            const cartIcon = document.querySelector('.cart-icon');
-            if (cartIcon) {
-                cartIcon.style.animation = 'bounce 0.5s ease';
-                setTimeout(() => {
-                    cartIcon.style.animation = '';
-                }, 500);
-            }
-            
             updateCartDisplay();
-            showNotification(`🗑️ تم حذف "${removedItem.name}" من السلة`, 'info');
-            
-            // إذا أصبحت السلة فارغة، إعادة تنشيط جميع الأزرار
-            if (cart.length === 0) {
-                setTimeout(() => {
-                    const allAddButtons = document.querySelectorAll('.add-to-cart');
-                    allAddButtons.forEach(button => {
-                        const productCard = button.closest('.product-card');
-                        const productId = productCard ? productCard.getAttribute('data-product') : null;
-                        
-                        if (productId && !productId.includes('package')) {
-                            // إعادة الزر لحالته الطبيعية
-                            button.style.opacity = '1';
-                            button.style.background = '';
-                            button.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
-                            
-                            // إعادة onclick الأصلي
-                            const originalOnclick = button.getAttribute('onclick');
-                            if (originalOnclick) {
-                                button.onclick = function(e) {
-                                    eval(originalOnclick);
-                                };
-                            }
-                        }
-                    });
-                    
-                    showNotification('✨ يمكنك الآن إضافة منتج جديد!', 'success');
-                }, 300);
-            }
+            showNotification(`تم حذف "${removedItem.name}" من السلة`, 'info');
         }
 
-        // تبديل السلة
         window.toggleCart = function() {
             const sidebar = document.getElementById('cart-sidebar');
             const overlay = document.getElementById('overlay');
@@ -2659,138 +2398,37 @@
             document.body.style.overflow = 'auto';
         }
 
-        // إتمام الطلب
         window.proceedToCheckout = async function() {
             if (cart.length === 0) return;
 
             const checkoutBtn = document.getElementById('checkout-btn');
             const originalText = checkoutBtn.innerHTML;
-            checkoutBtn.innerHTML = '⏳ جاري إرسال الطلب...';
+            checkoutBtn.innerHTML = 'جاري إرسال الطلب...';
             checkoutBtn.disabled = true;
 
             try {
                 if (cart.length === 1) {
-                    // عنصر واحد - استخدام الرابط المباشر
                     const item = cart[0];
                     window.open(item.paymentLink, '_blank');
                     
-                    // مسح السلة بعد الطلب
                     cart = [];
                     updateCartDisplay();
                     closeCart();
-                    showNotification('🔗 تم توجيهك لصفحة الدفع!', 'success');
+                    showNotification('تم توجيهك لصفحة الدفع!', 'success');
                 } else {
-                    // عناصر متعددة - إرسال للواتساب
                     await sendToWhatsApp();
                 }
                 
             } catch (error) {
-                console.error('خطأ في معالجة الطلب:', error);
-                showNotification('⏰ حدث خطأ، يرجى المحاولة مرة أخرى', 'error');
+                showNotification('حدث خطأ، يرجى المحاولة مرة أخرى', 'error');
             } finally {
-                // إعادة تعيين الزر
                 checkoutBtn.innerHTML = originalText;
                 checkoutBtn.disabled = false;
             }
         }
 
-        // حذف من السلة
-        window.removeFromCart = function(index) {
-            const removedItem = cart[index];
-            cart.splice(index, 1);
-            
-            // انيميشن عند الحذف
-            const cartIcon = document.querySelector('.cart-icon');
-            if (cartIcon) {
-                cartIcon.style.animation = 'bounce 0.5s ease';
-                setTimeout(() => {
-                    cartIcon.style.animation = '';
-                }, 500);
-            }
-            
-            updateCartDisplay();
-            showNotification(`🗑️ تم حذف "${removedItem.name}" من السلة`, 'info');
-            
-            // إذا أصبحت السلة فارغة، إعادة تنشيط جميع الأزرار
-            if (cart.length === 0) {
-                setTimeout(() => {
-                    const allAddButtons = document.querySelectorAll('.add-to-cart');
-                    allAddButtons.forEach(button => {
-                        const productCard = button.closest('.product-card');
-                        const productId = productCard ? productCard.getAttribute('data-product') : null;
-                        
-                        if (productId && !productId.includes('package')) {
-                            // إعادة الزر لحالته الطبيعية
-                            button.style.opacity = '1';
-                            button.style.background = '';
-                            button.innerHTML = '<span class="material-icons" style="margin-left: 8px;">add_shopping_cart</span>أضف للسلة';
-                            
-                            // إعادة onclick الأصلي
-                            const originalOnclick = button.getAttribute('onclick');
-                            if (originalOnclick) {
-                                button.onclick = function(e) {
-                                    eval(originalOnclick);
-                                };
-                            }
-                        }
-                    });
-                    
-                    showNotification('✨ يمكنك الآن إضافة منتج جديد!', 'success');
-                }, 300);
-            }
-        }
+        window.removeFromCart = removeFromCart;
 
-        // حذف رأي - معطلة للنسخة الإنتاجية
-        window.removeTestimonial = function(id) {
-            showNotification('⚠️ لا يمكن حذف التقييمات في النسخة المُوثقة. تواصل معنا عبر الواتساب للمساعدة.', 'info');
-            
-            // إرسال طلب حذف عبر الواتساب
-            const message = `طلب حذف تقييم رقم: ${id}\n\nيرجى مراجعة وحذف التقييم إن أمكن.`;
-            const whatsappUrl = `https://wa.me/966571653884?text=${encodeURIComponent(message)}`;
-            
-            setTimeout(() => {
-                if (confirm('هل تريد التواصل معنا عبر الواتساب لطلب الحذف؟')) {
-                    window.open(whatsappUrl, '_blank');
-                }
-            }, 2000);
-        }
-
-        // إتمام الطلب
-        async function proceedToCheckout() {
-            if (cart.length === 0) return;
-
-            const checkoutBtn = document.getElementById('checkout-btn');
-            const originalText = checkoutBtn.innerHTML;
-            checkoutBtn.innerHTML = '⏳ جاري إرسال الطلب...';
-            checkoutBtn.disabled = true;
-
-            try {
-                if (cart.length === 1) {
-                    // عنصر واحد - استخدام الرابط المباشر
-                    const item = cart[0];
-                    window.open(item.paymentLink, '_blank');
-                    
-                    // مسح السلة بعد الطلب
-                    cart = [];
-                    updateCartDisplay();
-                    closeCart();
-                    showNotification('🔗 تم توجيهك لصفحة الدفع!', 'success');
-                } else {
-                    // عناصر متعددة - إرسال للواتساب
-                    await sendToWhatsApp();
-                }
-                
-            } catch (error) {
-                console.error('خطأ في معالجة الطلب:', error);
-                showNotification('⏰ حدث خطأ، يرجى المحاولة مرة أخرى', 'error');
-            } finally {
-                // إعادة تعيين الزر
-                checkoutBtn.innerHTML = originalText;
-                checkoutBtn.disabled = false;
-            }
-        }
-
-        // إرسال للواتساب
         async function sendToWhatsApp() {
             try {
                 const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
@@ -2806,36 +2444,29 @@
                 const whatsappUrl = `https://wa.me/966571653884?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
                 
-                // مسح السلة
                 cart = [];
                 updateCartDisplay();
                 closeCart();
-                showNotification('📱 تم إرسال طلبك عبر الواتساب', 'info');
+                showNotification('تم إرسال طلبك عبر الواتساب', 'info');
             } catch (error) {
-                console.error('خطأ في إرسال رسالة الواتساب:', error);
                 showNotification('حدث خطأ أثناء الإرسال', 'error');
             }
         }
 
-        // نظام الإشعارات
         function showNotification(message, type = 'success') {
-            // حذف الإشعارات الموجودة
             const existingNotifications = document.querySelectorAll('.notification');
             existingNotifications.forEach(notif => notif.remove());
 
-            // إنشاء الإشعار
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
             notification.textContent = message;
             
             document.body.appendChild(notification);
 
-            // إظهار الإشعار
             setTimeout(() => {
                 notification.classList.add('show');
             }, 100);
 
-            // إخفاء الإشعار
             setTimeout(() => {
                 notification.classList.remove('show');
                 setTimeout(() => {
@@ -2843,15 +2474,13 @@
                         document.body.removeChild(notification);
                     }
                 }, 400);
-            }, 4000);
+            }, 4500);
         }
 
-        // القائمة المحمولة
         window.toggleMobileMenu = function() {
             const navLinks = document.getElementById('nav-links');
             navLinks.classList.toggle('open');
             
-            // تبديل أيقونة القائمة
             const menuBtn = document.querySelector('.mobile-menu-btn .material-icons');
             if (navLinks.classList.contains('open')) {
                 menuBtn.textContent = 'close';
@@ -2870,7 +2499,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // تبديل الأسئلة الشائعة
         window.toggleFaq = function(element) {
             const answer = element.nextElementSibling;
             const icon = element.querySelector('span:last-child');
@@ -2880,7 +2508,6 @@
                 answer.style.maxHeight = '0';
                 icon.textContent = '+';
             } else {
-                // إغلاق جميع الأسئلة الأخرى
                 document.querySelectorAll('.faq-answer').forEach(ans => {
                     ans.classList.remove('active');
                     ans.style.maxHeight = '0';
@@ -2889,76 +2516,57 @@
                     ic.textContent = '+';
                 });
 
-                // فتح السؤال الحالي
                 answer.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
                 icon.textContent = '-';
             }
         }
 
-        // مستمعي الأحداث
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('تم تحميل الصفحة بنجاح!');
-            
-            // إظهار الصفحة الرئيسية
-            showPage('home');
-            
-            // تحديث عرض السلة
-            updateCartDisplay();
-            
-            // تفعيل انيميشن الصورة الرئيسية
-            initHeroAnimations();
-            
-            // إعداد نموذج الآراء
-            const testimonialForm = document.getElementById('testimonial-form');
-            if (testimonialForm) {
-                testimonialForm.addEventListener('submit', handleTestimonialSubmit);
-            }
-            
-            // إضافة مستمعي الأحداث لجميع الأزرار
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('تم النقر على زر إضافة للسلة');
-                });
-            });
-            
-            // إغلاق القوائم عند النقر خارجها
-            document.addEventListener('click', function(e) {
-                const navLinks = document.getElementById('nav-links');
-                const menuBtn = document.querySelector('.mobile-menu-btn');
-                
-                if (navLinks && menuBtn && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-                    closeMobileMenu();
-                }
-                
-                // إغلاق السلة عند النقر على الخلفية
-                const overlay = document.getElementById('overlay');
-                if (overlay && e.target === overlay) {
-                    closeCart();
-                }
-            });
-
-            // التنقل بالكيبورد
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeCart();
-                    closeMobileMenu();
-                    closeImageModal();
-                }
-            });
-        });
-
-        // تأثيرات التمرير
         window.addEventListener('scroll', function() {
             const header = document.getElementById('main-header');
+            const floatingWhatsApp = document.getElementById('floating-whatsapp');
+            
             if (window.scrollY > 100) {
                 header.style.background = 'rgba(15, 23, 42, 0.95)';
+                floatingWhatsApp.classList.add('show');
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.05)';
+                floatingWhatsApp.classList.remove('show');
             }
+        });
+
+        // Add swipe functionality for mobile
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            if (!startX || !startY) return;
+
+            let endX = e.changedTouches[0].clientX;
+            let endY = e.changedTouches[0].clientY;
+
+            let diffX = startX - endX;
+            let diffY = startY - endY;
+
+            // Only handle horizontal swipes
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                // Swipe left - next page
+                if (diffX > 0 && currentPage === 'home') {
+                    showPage('store');
+                }
+                // Swipe right - previous page  
+                else if (diffX < 0 && currentPage === 'store') {
+                    showPage('home');
+                }
+            }
+
+            startX = 0;
+            startY = 0;
         });
     </script>
 </body>
