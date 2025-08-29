@@ -1,5 +1,6 @@
 export default async function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  // 👇 السماح فقط لدومين متجرك
+  res.setHeader("Access-Control-Allow-Origin", "https://moonhub.store");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -38,7 +39,7 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-    console.log("⚡ Paylink API Response:", data); // نطبع الرد كامل
+    console.log("⚡ Paylink API Response:", data);
     res.status(200).json(data);
   } catch (error) {
     console.error("❌ Paylink API Error:", error);
