@@ -175,16 +175,6 @@
             border-radius: 8px;
         }
 
-        .mobile-header-actions {
-            display: none;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .mobile-cart {
-            display: none;
-        }
-
         /* Page sections */
         .page-section {
             min-height: 100vh;
@@ -1047,238 +1037,7 @@
             padding-right: 20px;
         }
 
-        .order-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .order-modal {
-            background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
-            padding: 40px;
-            border-radius: 25px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            border: 2px solid var(--border-color);
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .order-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .order-title {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .order-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .order-steps {
-            margin: 30px 0;
-        }
-
-        .order-step {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
-        }
-
-        .step-number {
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: white;
-        }
-
-        .step-content {
-            flex: 1;
-        }
-
-        .step-title {
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-
-        .step-description {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .order-info {
-            background: var(--bg-card);
-            padding: 25px;
-            border-radius: 15px;
-            border: 2px solid var(--border-color);
-            margin: 25px 0;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .info-label {
-            color: var(--text-secondary);
-        }
-
-        .info-value {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .invoice-section {
-            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05));
-            padding: 25px;
-            border-radius: 15px;
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            margin: 25px 0;
-            text-align: center;
-        }
-
-        .invoice-number {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--accent-color);
-            margin: 15px 0;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 1px;
-        }
-
-        .copy-btn {
-            background: linear-gradient(45deg, var(--success-color), #059669);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .copy-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
-        }
-
-        .contact-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .contact-btn {
-            padding: 20px;
-            border-radius: 15px;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .whatsapp-contact {
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            color: white;
-        }
-
-        .discord-contact {
-            background: linear-gradient(45deg, #5865F2, #4752C4);
-            color: white;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .order-modal {
-                padding: 25px;
-                margin: 10px;
-            }
-
-            .contact-options {
-                grid-template-columns: 1fr;
-            }
-
-            .order-step {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: right;
-            }
-
-            .step-number {
-                align-self: flex-end;
-                margin-bottom: 10px;
-            }
-        }
+        /* Mobile Touch Effects */
         .product-card:active {
             transform: translateY(-5px) scale(0.98);
         }
@@ -1332,25 +1091,6 @@
 
             .mobile-menu-btn {
                 display: block;
-            }
-
-            .mobile-header-actions {
-                display: flex;
-            }
-
-            .desktop-cart {
-                display: none !important;
-            }
-
-            .mobile-cart {
-                display: flex !important;
-                background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-            }
-
-            .mobile-cart:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
             }
 
             .nav-links {
@@ -1515,30 +1255,8 @@
             }
 
             .cart-sidebar {
-                width: 100%;
-                max-width: none;
-                right: -100%;
-            }
-
-            .cart-sidebar.open {
-                right: 0;
-            }
-
-            .cart-header {
-                padding: 20px;
-                position: sticky;
-                top: 0;
-                background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
-                backdrop-filter: blur(20px);
-                z-index: 100;
-            }
-
-            .cart-footer {
-                position: sticky;
-                bottom: 0;
-                padding: 20px;
-                background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(15, 23, 42, 0.95));
-                backdrop-filter: blur(20px);
+                width: 95%;
+                max-width: 400px;
             }
 
             .product-features, .terms-section {
@@ -1643,17 +1361,14 @@
                 <img src="https://i.imgur.com/fJJ3LYY.png" alt="Moon Store Logo" class="logo">
                 <span class="brand-name">Moon</span>
             </div>
-            
-            <!-- Desktop Navigation -->
             <ul class="nav-links" id="nav-links">
                 <li><a onclick="showPage('contact'); closeMobileMenu()">تواصل معنا</a></li>
-                <li><a onclick="showPage('payment-info'); closeMobileMenu()">طريقة الدفع</a></li>
                 <li><a onclick="showPage('faq'); closeMobileMenu()">الأسئلة الشائعة</a></li>
                 <li><a onclick="showPage('features'); closeMobileMenu()">مميزاتنا</a></li>
                 <li><a onclick="showPage('about'); closeMobileMenu()">من نحن</a></li>
                 <li><a onclick="showPage('store'); closeMobileMenu()">المتجر</a></li>
                 <li><a onclick="showPage('home'); closeMobileMenu()" class="active">الرئيسية</a></li>
-                <li class="desktop-cart">
+                <li>
                     <div class="cart-icon" onclick="toggleCart()">
                         <span class="material-icons">shopping_cart</span>
                         <span class="cart-count" id="cart-count">0</span>
@@ -1665,17 +1380,9 @@
                     </a>
                 </li>
             </ul>
-
-            <!-- Mobile Header Actions -->
-            <div class="mobile-header-actions">
-                <div class="cart-icon mobile-cart" onclick="toggleCart()">
-                    <span class="material-icons">shopping_cart</span>
-                    <span class="cart-count" id="cart-count-mobile">0</span>
-                </div>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
         </nav>
     </header>
 
@@ -1820,19 +1527,19 @@
                 </div>
 
                 <!-- المنتجات الفردية -->
-                <div class="product-card" data-product="logo-design">
+                <div class="product-card" data-product="visual-identity">
                     <div class="product-image">
-                        <img src="https://i.imgur.com/MArsLUn.png" alt="تصميم شعار">
+                        <img src="https://i.imgur.com/MArsLUn.png" alt="الهوية البصرية">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">
                             <span class="material-icons">palette</span>
-                            تصميم Logo
+                            هوية بصرية
                         </h3>
                         <p class="product-description">
-                            احصل على logo احترافي وفريد يعكس شخصية علامتك التجارية ويميزها عن المنافسين
+                            احصل على هوية بصرية متكاملة واحترافية تعكس شخصية علامتك التجارية وتميزها عن المنافسين
                         </p>
-                        <button class="product-details-btn" onclick="showProductDetail('logo-design')">
+                        <button class="product-details-btn" onclick="showProductDetail('visual-identity')">
                             <span class="material-icons">visibility</span>
                             إظهار التفاصيل
                         </button>
@@ -2058,155 +1765,6 @@
         </div>
     </section>
 
-    <!-- Payment Info Page -->
-    <section id="payment-info" class="page-section">
-        <div class="container">
-            <h2 class="section-title">طريقة الدفع والطلب</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
-                خطوات بسيطة وآمنة لإكمال طلبك بنجاح
-            </p>
-            
-            <div style="max-width: 900px; margin: 0 auto;">
-                <!-- خطوات الدفع -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 50px;">
-                    
-                    <div style="background: linear-gradient(145deg, var(--bg-card), rgba(59, 130, 246, 0.05)); padding: 30px; border-radius: 20px; border: 2px solid var(--border-color); text-align: center; position: relative;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-weight: 900; font-size: 1.5rem;">1</div>
-                        <h3 style="color: var(--success-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">دفع قيمة المنتج</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">اختر المنتج المطلوب وادفع قيمته عن طريق الرابط المتوفر</p>
-                    </div>
-
-                    <div style="background: linear-gradient(145deg, var(--bg-card), rgba(245, 158, 11, 0.05)); padding: 30px; border-radius: 20px; border: 2px solid rgba(245, 158, 11, 0.2); text-align: center;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #f59e0b, #f97316); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-weight: 900; font-size: 1.5rem;">2</div>
-                        <h3 style="color: var(--warning-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">نسخ الفاتورة</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">بعد الدفع، انسخ رقم الفاتورة أو خذ لقطة شاشة للإيصال</p>
-                    </div>
-
-                    <div style="background: linear-gradient(145deg, var(--bg-card), rgba(59, 130, 246, 0.05)); padding: 30px; border-radius: 20px; border: 2px solid var(--border-color); text-align: center;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-weight: 900; font-size: 1.5rem;">3</div>
-                        <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">إرسال الفاتورة</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">أرسل رقم الفاتورة عبر واتساب أو تذكرة ديسكورد</p>
-                    </div>
-
-                    <div style="background: linear-gradient(145deg, var(--bg-card), rgba(139, 92, 246, 0.05)); padding: 30px; border-radius: 20px; border: 2px solid rgba(139, 92, 246, 0.2); text-align: center;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #8b5cf6, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-weight: 900; font-size: 1.5rem;">4</div>
-                        <h3 style="color: #8b5cf6; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">تفاصيل الطلب</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">أرسل تفاصيل طلبك مثل: اسم المتجر، الثيم، الألوان المفضلة</p>
-                    </div>
-                </div>
-
-                <!-- تفاصيل الطلب -->
-                <div style="background: var(--bg-card); padding: 40px; border-radius: 20px; border: 2px solid var(--border-color); margin-bottom: 40px;">
-                    <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 25px; font-weight: 700; text-align: center;">
-                        <span class="material-icons" style="vertical-align: middle; margin-left: 8px;">edit_note</span>
-                        أمثلة على تفاصيل الطلب المطلوبة
-                    </h3>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
-                        <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                            <h4 style="color: var(--success-color); margin-bottom: 15px; font-size: 1.1rem;">للمتاجر الإلكترونية:</h4>
-                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 1.8;">
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--success-color);">•</span>
-                                    اسم المتجر
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--success-color);">•</span>
-                                    نوع المنتجات (فساتين، إلكترونيات، إلخ)
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--success-color);">•</span>
-                                    الألوان المفضلة
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--success-color);">•</span>
-                                    نمط التصميم (عصري، كلاسيكي، إلخ)
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                            <h4 style="color: var(--warning-color); margin-bottom: 15px; font-size: 1.1rem;">لتصميم Logo:</h4>
-                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 1.8;">
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--warning-color);">•</span>
-                                    اسم الشركة/البراند
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--warning-color);">•</span>
-                                    طبيعة النشاط
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--warning-color);">•</span>
-                                    الألوان المرغوبة
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--warning-color);">•</span>
-                                    أي أفكار أو مراجع للتصميم
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                            <h4 style="color: var(--accent-color); margin-bottom: 15px; font-size: 1.1rem;">للمواقع الإلكترونية:</h4>
-                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 1.8;">
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    اسم الموقع المطلوب
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    المحتوى والصفحات المطلوبة
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    التصميم المفضل (مع أمثلة إن أمكن)
-                                </li>
-                                <li style="margin: 8px 0; position: relative; padding-right: 20px;">
-                                    <span style="position: absolute; right: 0; color: var(--accent-color);">•</span>
-                                    معلومات التواصل والشركة
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- وسائل التواصل -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px;">
-                    <div style="background: linear-gradient(45deg, #25D366, #128C7E); padding: 30px; border-radius: 20px; text-align: center; color: white;">
-                        <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
-                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">واتساب</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.9;">التواصل السريع والمباشر</p>
-                        <a href="https://wa.me/966571653884?text=السلام عليكم، أود إرسال تفاصيل طلبي" target="_blank" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease; backdrop-filter: blur(10px);">
-                            إرسال عبر واتساب
-                        </a>
-                    </div>
-
-                    <div style="background: linear-gradient(45deg, #5865F2, #4752C4); padding: 30px; border-radius: 20px; text-align: center; color: white;">
-                        <div style="font-size: 3rem; margin-bottom: 15px;">🎮</div>
-                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">ديسكورد</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.9;">إنشاء تذكرة دعم فني</p>
-                        <button onclick="showNotification('قريباً - سيتم إضافة رابط الديسكورد', 'info')" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 12px 25px; border-radius: 25px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);">
-                            إنشاء تذكرة
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ملاحظات مهمة -->
-                <div style="background: linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05)); padding: 30px; border-radius: 20px; border: 2px solid rgba(239, 68, 68, 0.3); text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">⚠️</div>
-                    <h3 style="color: var(--error-color); font-size: 1.4rem; margin-bottom: 20px; font-weight: 700;">ملاحظات مهمة</h3>
-                    <div style="color: var(--text-secondary); line-height: 1.8; text-align: right;">
-                        <p style="margin-bottom: 15px;">• يرجى الاحتفاظ برقم الفاتورة حتى اكتمال الطلب</p>
-                        <p style="margin-bottom: 15px;">• سيتم التواصل معك خلال 24 ساعة لتأكيد الطلب</p>
-                        <p style="margin-bottom: 15px;">• كلما كانت التفاصيل أوضح، كان التنفيذ أدق وأسرع</p>
-                        <p style="margin-bottom: 0;">• يمكنك إرسال صور أو أمثلة لتوضيح فكرتك</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Page -->
     <section id="contact" class="page-section">
         <div class="container">
@@ -2243,84 +1801,6 @@
         </div>
     </section>
 
-    <!-- Order Process Modal -->
-    <div class="order-overlay" id="orderOverlay">
-        <div class="order-modal">
-            <button class="close-modal" onclick="closeOrderModal()">×</button>
-            
-            <div class="order-header">
-                <h2 class="order-title" id="orderProductTitle">طلب المنتج</h2>
-                <p class="order-subtitle">اتبع الخطوات التالية لإكمال طلبك</p>
-            </div>
-
-            <div class="order-steps">
-                <div class="order-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <div class="step-title">اختيار المنتج</div>
-                        <div class="step-description">تم اختيار المنتج وتحديد السعر</div>
-                    </div>
-                </div>
-
-                <div class="order-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <div class="step-title">معلومات الطلب</div>
-                        <div class="step-description">مراجعة تفاصيل المنتج والسعر</div>
-                    </div>
-                </div>
-
-                <div class="order-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <div class="step-title">رقم الفاتورة</div>
-                        <div class="step-description">انسخ رقم الفاتورة الخاص بطلبك</div>
-                    </div>
-                </div>
-
-                <div class="order-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <div class="step-title">إرسال الطلب</div>
-                        <div class="step-description">أرسل رقم الفاتورة عبر واتساب أو ديسكورد</div>
-                    </div>
-                </div>
-
-                <div class="order-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <div class="step-title">التسليم</div>
-                        <div class="step-description">سيتم التواصل معك وتسليم المنتج</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="order-info" id="orderInfo">
-                <!-- سيتم ملؤها ديناميكياً -->
-            </div>
-
-            <div class="invoice-section">
-                <h3 style="color: var(--accent-color); margin-bottom: 15px;">رقم الفاتورة</h3>
-                <div class="invoice-number" id="invoiceNumber">MOON-2025-001234</div>
-                <button class="copy-btn" onclick="copyInvoiceNumber()">
-                    <span class="material-icons" style="font-size: 1rem;">content_copy</span>
-                    نسخ رقم الفاتورة
-                </button>
-            </div>
-
-            <div class="contact-options">
-                <button class="contact-btn whatsapp-contact" onclick="sendToWhatsAppWithInvoice()">
-                    <span class="material-icons">chat</span>
-                    إرسال عبر واتساب
-                </button>
-                <button class="contact-btn discord-contact" onclick="sendToDiscord()">
-                    <span style="font-size: 1.2rem;">🎮</span>
-                    إرسال تذكرة ديسكورد
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -2331,7 +1811,7 @@
                 </div>
                 <div class="footer-social">
                     <a href="https://wa.me/966571653884" title="واتساب" target="_blank">📱</a>
-                    <a href="#" title="توتير" onclick="showNotification('قريباً - تابعونا!', 'info')">🦅</a>
+                    <a href="#" title="تويتر" onclick="showNotification('قريباً - تابعونا!', 'info')">🐦</a>
                     <a href="#" title="إنستغرام" onclick="showNotification('قريباً - تابعونا!', 'info')">📷</a>
                     <a href="#" title="لينكد إن" onclick="showNotification('قريباً - تابعونا!', 'info')">💼</a>
                     <a href="#" title="يوتيوب" onclick="showNotification('قريباً - تابعونا!', 'info')">🎥</a>
@@ -2340,211 +1820,11 @@
         </div>
     </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
-
     <script>
-        // 🔥 Firebase Configuration - إعداداتك من Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyBUNx42UPfP9I0R1_cvtKuoZze5a6nek68",
-            authDomain: "moon-analytics-9d470.firebaseapp.com",
-            projectId: "moon-analytics-9d470",
-            storageBucket: "moon-analytics-9d470.firebasestorage.app",
-            messagingSenderId: "55101930601",
-            appId: "1:55101930601:web:9f57c51a3abe335737b6f8",
-            measurementId: "G-YBLEX71G08"
-        };
-
-        // دالة للتأكد من تحميل Firebase
-        function initFirebase() {
-            if (typeof firebase === 'undefined') {
-                console.log('انتظار تحميل Firebase...');
-                setTimeout(initFirebase, 100);
-                return;
-            }
-            
-            try {
-                // تهيئة Firebase
-                firebase.initializeApp(firebaseConfig);
-                window.db = firebase.firestore();
-                console.log('تم تحميل Firebase بنجاح');
-            } catch (error) {
-                console.error('خطأ في تهيئة Firebase:', error);
-            }
-        }
-
-        // بدء تحميل Firebase
-        initFirebase();
-
-        // 🌙 نظام Moon Firebase Analytics
-        class MoonFirebaseAnalytics {
-            constructor() {
-                this.sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                this.userId = this.getUserId();
-                this.waitForFirebase().then(() => {
-                    this.init();
-                });
-            }
-
-            async waitForFirebase() {
-                return new Promise((resolve) => {
-                    const checkFirebase = () => {
-                        if (typeof firebase !== 'undefined' && window.db) {
-                            resolve();
-                        } else {
-                            setTimeout(checkFirebase, 100);
-                        }
-                    };
-                    checkFirebase();
-                });
-            }
-
-            getUserId() {
-                let userId = localStorage.getItem('moon_user_id');
-                if (!userId) {
-                    userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                    localStorage.setItem('moon_user_id', userId);
-                }
-                return userId;
-            }
-
-            init() {
-                this.trackPageView();
-                this.setupEventListeners();
-                console.log('🌙 Moon Analytics مُفعل بنجاح');
-            }
-
-            async trackEvent(eventType, data = {}) {
-                try {
-                    if (!window.db) {
-                        console.log('Firebase غير جاهز بعد');
-                        return;
-                    }
-
-                    const eventData = {
-                        eventType,
-                        timestamp: new Date(),
-                        sessionId: this.sessionId,
-                        userId: this.userId,
-                        url: window.location.href,
-                        userAgent: navigator.userAgent,
-                        referrer: document.referrer || 'direct',
-                        ...data
-                    };
-
-                    await window.db.collection('analytics_events').add(eventData);
-                    console.log('📊 Event tracked:', eventType);
-                } catch (error) {
-                    console.error('⚠ Error tracking event:', error);
-                }
-            }
-
-            trackPageView() {
-                this.trackEvent('page_view', {
-                    page: window.location.pathname,
-                    title: document.title
-                });
-            }
-
-            setupEventListeners() {
-                document.addEventListener('click', (e) => {
-                    // تتبع مشاهدة المنتجات
-                    if (e.target.closest('.product-details-btn')) {
-                        const productCard = e.target.closest('.product-card');
-                        if (productCard) {
-                            const productId = productCard.getAttribute('data-product');
-                            const productTitle = productCard.querySelector('.product-title')?.textContent?.trim();
-                            
-                            this.trackEvent('product_view', {
-                                productId,
-                                productTitle,
-                                source: 'product_card'
-                            });
-                        }
-                    }
-
-                    // تتبع النقر على أزرار الدفع
-                    if (e.target.closest('.buy-now') || e.target.closest('button[onclick*="buyPackage"]')) {
-                        const button = e.target.closest('.buy-now') || e.target.closest('button[onclick*="buyPackage"]');
-                        const context = button.closest('.product-card') || button.closest('.product-detail');
-                        const productTitle = this.getProductTitle(context);
-                        const productId = this.getProductId(context, productTitle);
-
-                        this.trackEvent('payment_click', {
-                            productId,
-                            productTitle,
-                            buttonType: 'buy_now',
-                            source: context?.closest('.product-detail') ? 'detail_page' : 'product_card'
-                        });
-                    }
-
-                    // تتبع إضافة للسلة
-                    if (e.target.closest('.add-to-cart')) {
-                        const button = e.target.closest('.add-to-cart');
-                        const context = button.closest('.product-card') || button.closest('.product-detail');
-                        const productTitle = this.getProductTitle(context);
-                        const productId = this.getProductId(context, productTitle);
-
-                        this.trackEvent('add_to_cart', {
-                            productId,
-                            productTitle
-                        });
-                    }
-
-                    // تتبع النقر على واتساب
-                    if (e.target.closest('a[href*="wa.me"]') || 
-                        e.target.closest('.whatsapp-btn') || 
-                        e.target.closest('.floating-whatsapp')) {
-                        
-                        this.trackEvent('whatsapp_click', {
-                            source: 'contact_button'
-                        });
-                    }
-                });
-            }
-
-            getProductTitle(element) {
-                if (!element) return 'منتج غير محدد';
-                
-                const selectors = ['.product-title', '.product-detail-title', 'h1', 'h2', 'h3'];
-                for (const selector of selectors) {
-                    const titleEl = element.querySelector(selector);
-                    if (titleEl) return titleEl.textContent.trim();
-                }
-                return 'منتج غير محدد';
-            }
-
-            getProductId(element, title) {
-                if (element) {
-                    const productId = element.getAttribute('data-product') || 
-                                   element.closest('[data-product]')?.getAttribute('data-product');
-                    if (productId) return productId;
-                }
-
-                const titleMap = {
-                    'الباقة الماسية': 'diamond-package',
-                    'الباقة الذهبية': 'gold-package',
-                    'الباقة الفضية': 'silver-package',
-                    'تصميم Logo': 'logo-design',
-                    'موقع متكامل': 'website',
-                    'متجر شامل': 'ecommerce',
-                    'سيرفر FiveM': 'fivem',
-                    'قوالب Canva': 'canva'
-                };
-
-                for (const [key, value] of Object.entries(titleMap)) {
-                    if (title.includes(key)) return value;
-                }
-                return 'unknown';
-            }
-        }
-
-        // Variables
         let cart = [];
         let total = 0;
-        let currentOrder = null;
-
+        let currentPage = 'home';
+        
         // Product data
         const productData = {
             'diamond-package': {
@@ -2611,24 +1891,24 @@
                 paymentLink: 'https://payment.paylink.sa/pay/product/22890281000149903',
                 badge: { text: 'الفضية', color: 'linear-gradient(45deg, #64748b, #475569)' }
             },
-            'logo-design': {
-                title: 'تصميم Logo',
+            'visual-identity': {
+                title: 'هوية بصرية',
                 icon: 'palette',
                 image: 'https://i.imgur.com/MArsLUn.png',
-                oldPrice: null,
-                price: 100,
-                description: 'احصل على logo احترافي وفريد يعكس شخصية علامتك التجارية ويميزها عن المنافسين. تصميم إبداعي مع ملفات عالية الجودة وحقوق استخدام كاملة.',
+                oldPrice: 140,
+                price: 70,
+                description: 'احصل على هوية بصرية متكاملة واحترافية تعكس شخصية علامتك التجارية وتميزها عن المنافسين. تشمل جميع العناصر الضرورية لبناء هوية قوية ومتماسكة.',
                 features: [
-                    'تصميم logo احترافي وفريد',
-                    'ملفات بجودة عالية (AI, PNG, JPG, SVG)',
+                    'تصميم شعار احترافي وفريد',
+                    'بطاقة أعمال أنيقة ومميزة',
+                    'دليل الاستخدام والهوية',
+                    'ملفات بجودة عالية (AI, PNG, JPG)',
                     '3 تعديلات مجانية',
-                    'تسليم خلال 2-3 أيام عمل',
+                    'تسليم خلال 3-5 أيام',
                     'ملكية كاملة للتصميم',
-                    'دعم فني لمدة شهر',
-                    'إرشادات الاستخدام الأساسية',
-                    'تصميم مناسب لجميع الاستخدامات'
+                    'دعم فني لمدة شهر'
                 ],
-                paymentLink: 'https://payment.paylink.sa/pay/product/23062141000149903'
+                paymentLink: 'https://payment.paylink.sa/pay/product/22736671000149903'
             },
             'website': {
                 title: 'موقع متكامل',
@@ -2709,9 +1989,6 @@
         };
 
         document.addEventListener('DOMContentLoaded', function() {
-            // تشغيل نظام Moon Analytics
-            window.moonAnalytics = new MoonFirebaseAnalytics();
-            
             showPage('home');
             updateCartDisplay();
             initHeroAnimations();
@@ -2738,218 +2015,9 @@
             });
         });
 
-        // دالة لتتبع أحداث مخصصة
-        window.trackCustomEvent = function(eventType, data = {}) {
-            if (window.moonAnalytics) {
-                window.moonAnalytics.trackEvent(eventType, data);
-            }
-        };
-
-        // دالة عرض ناقذة الطلب
-        window.showOrderProcess = function(productId, productTitle, price) {
-            currentOrder = {
-                id: productId,
-                title: productTitle,
-                price: price,
-                invoiceNumber: generateInvoiceNumber()
-            };
-
-            // تحديث معلومات الطلب
-            document.getElementById('orderProductTitle').textContent = `طلب: ${productTitle}`;
-            
-            // إنشاء معلومات الطلب
-            const orderInfo = document.getElementById('orderInfo');
-            orderInfo.innerHTML = `
-                <div class="info-row">
-                    <span class="info-label">اسم المنتج:</span>
-                    <span class="info-value">${productTitle}</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">السعر:</span>
-                    <span class="info-value" style="color: #4a90e2;">${price} ريال سعودي</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">تاريخ الطلب:</span>
-                    <span class="info-value">${new Date().toLocaleDateString('ar-SA')}</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">معرف المنتج:</span>
-                    <span class="info-value">${productId}</span>
-                </div>
-            `;
-
-            // عرض رقم الفاتورة
-            document.getElementById('invoiceNumber').textContent = currentOrder.invoiceNumber;
-
-            // إظهار الناقذة
-            document.getElementById('orderOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-
-            // تتبع الحدث
-            if (window.moonAnalytics) {
-                window.moonAnalytics.trackEvent('order_process_opened', {
-                    productId: productId,
-                    productTitle: productTitle,
-                    price: price
-                });
-            }
-        };
-
-        // دالة إغلاق ناقذة الطلب
-        window.closeOrderModal = function() {
-            document.getElementById('orderOverlay').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            currentOrder = null;
-        };
-
-        // دالة توليد رقم فاتورة
-        function generateInvoiceNumber() {
-            const date = new Date();
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const random = Math.floor(Math.random() * 9999).toString().padStart(4, '0');
-            
-            return `MOON-${year}${month}${day}-${random}`;
-        }
-
-        // دالة نسخ رقم الفاتورة
-        window.copyInvoiceNumber = function() {
-            const invoiceNumber = document.getElementById('invoiceNumber').textContent;
-            
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(invoiceNumber).then(() => {
-                    showNotification('تم نسخ رقم الفاتورة بنجاح', 'success');
-                    
-                    // تغيير نص الزر مؤقتاً
-                    const copyBtn = document.querySelector('.copy-btn');
-                    const originalText = copyBtn.innerHTML;
-                    copyBtn.innerHTML = '<span class="material-icons" style="font-size: 1rem;">check</span>تم النسخ!';
-                    
-                    setTimeout(() => {
-                        copyBtn.innerHTML = originalText;
-                    }, 2000);
-                }).catch(() => {
-                    fallbackCopyTextToClipboard(invoiceNumber);
-                });
-            } else {
-                fallbackCopyTextToClipboard(invoiceNumber);
-            }
-
-            // تتبع الحدث
-            if (window.moonAnalytics) {
-                window.moonAnalytics.trackEvent('invoice_copied', {
-                    invoiceNumber: invoiceNumber
-                });
-            }
-        };
-
-        // دالة احتياطية لنسخ النص
-        function fallbackCopyTextToClipboard(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.top = "0";
-            textArea.style.left = "0";
-            textArea.style.position = "fixed";
-
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-
-            try {
-                document.execCommand('copy');
-                showNotification('تم نسخ رقم الفاتورة بنجاح', 'success');
-            } catch (err) {
-                showNotification('لم يتمكن من نسخ رقم الفاتورة', 'error');
-            }
-
-            document.body.removeChild(textArea);
-        }
-
-        // دالة إرسال عبر واتساب مع رقم الفاتورة
-        window.sendToWhatsAppWithInvoice = function() {
-            if (!currentOrder) return;
-
-            const message = `السلام عليكم ورحمة الله وبركاته
-
-🌙 طلب جديد من متجر Moon Store
-
-📋 تفاصيل الطلب:
-• المنتج: ${currentOrder.title}
-• السعر: ${currentOrder.price} ريال سعودي
-• رقم الفاتورة: ${currentOrder.invoiceNumber}
-• التاريخ: ${new Date().toLocaleDateString('ar-SA')}
-
-يرجى تأكيد الطلب ومعلومات الدفع.
-
-شكراً لكم`;
-
-            const whatsappUrl = `https://wa.me/966571653884?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            
-            showNotification('تم فتح واتساب. أرسل الرسالة لإتمام الطلب', 'info');
-            closeOrderModal();
-
-            // تتبع الحدث
-            if (window.moonAnalytics) {
-                window.moonAnalytics.trackEvent('whatsapp_order_sent', {
-                    productId: currentOrder.id,
-                    invoiceNumber: currentOrder.invoiceNumber
-                });
-            }
-        };
-
-        // دالة إرسال تذكرة ديسكورد
-        window.sendToDiscord = function() {
-            if (!currentOrder) return;
-
-            const discordMessage = `🌙 **طلب جديد من متجر Moon Store**
-
-📋 **تفاصيل الطلب:**
-• المنتج: \`${currentOrder.title}\`
-• السعر: \`${currentOrder.price} ريال سعودي\`
-• رقم الفاتورة: \`${currentOrder.invoiceNumber}\`
-• التاريخ: \`${new Date().toLocaleDateString('ar-SA')}\`
-
-يرجى تأكيد الطلب ومعلومات الدفع.`;
-
-            // نسخ الرسالة للحافظة
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(discordMessage).then(() => {
-                    showNotification('تم نسخ رسالة ديسكورد. الصق الرسالة في تذكرة جديدة', 'success');
-                });
-            } else {
-                fallbackCopyTextToClipboard(discordMessage);
-                showNotification('تم نسخ رسالة ديسكورد. الصق الرسالة في تذكرة جديدة', 'success');
-            }
-
-            closeOrderModal();
-
-            // تتبع الحدث
-            if (window.moonAnalytics) {
-                window.moonAnalytics.trackEvent('discord_order_prepared', {
-                    productId: currentOrder.id,
-                    invoiceNumber: currentOrder.invoiceNumber
-                });
-            }
-        };
-
-        // إغلاق الناقذة عند النقر خارجها
-        document.addEventListener('click', function(e) {
-            const orderOverlay = document.getElementById('orderOverlay');
-            if (e.target === orderOverlay) {
-                closeOrderModal();
-            }
-        });
-
-        // إغلاق الناقذة بمفتاح Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeOrderModal();
-            }
-        });
-
         window.showPage = function(pageId) {
+            if (currentPage === pageId) return;
+            
             const allSections = document.querySelectorAll('.page-section');
             allSections.forEach(section => {
                 section.classList.remove('active');
@@ -2969,6 +2037,17 @@
         }
 
         window.showProductDetail = function(productId) {
+            // Make entire product card clickable by handling click on the card
+            document.addEventListener('click', function(e) {
+                const productCard = e.target.closest('.product-card');
+                if (productCard && !e.target.closest('.product-details-btn')) {
+                    const productId = productCard.getAttribute('data-product');
+                    if (productId) {
+                        showProductDetail(productId);
+                    }
+                }
+            });
+
             const product = productData[productId];
             if (!product) return;
 
@@ -3013,29 +2092,20 @@
                         </div>
                         
                         <div class="action-buttons">
-                            <button class="add-to-cart" onclick="addToCart('${productId}', '${product.title}', ${product.price}, '${product.paymentLink}')">
-                                <span class="material-icons">add_shopping_cart</span>
-                                أضف للسلة
-                            </button>
-                            <button onclick="buyNowWithAPI('diamond-package')">اشتر الآن</button>
-                                <span class="material-icons">payment</span>
-                                اشتر الآن
-                            </button>
-                        </div>
-                        
-                        <!-- تذكير مهم لطريقة الدفع -->
-                        <div style="background: linear-gradient(45deg, rgba(245, 158, 11, 0.15), rgba(249, 115, 22, 0.08)); padding: 25px; border-radius: 20px; border: 2px solid rgba(245, 158, 11, 0.4); margin-top: 25px; text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 15px;">⚠️</div>
-                            <h4 style="color: var(--warning-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">تذكير مهم - طريقة الدفع</h4>
-                            <div style="color: var(--text-primary); line-height: 1.8; text-align: center;">
-                                <p style="margin-bottom: 10px; font-weight: 600;">بعد الدفع، يرجى:</p>
-                                <p style="margin-bottom: 8px;">1. نسخ رقم الفاتورة أو أخذ لقطة شاشة</p>
-                                <p style="margin-bottom: 8px;">2. إرسال رقم الفاتورة + تفاصيل طلبك عبر واتساب</p>
-                                <p style="margin-bottom: 15px;">3. انتظار التأكيد خلال 24 ساعة</p>
-                                <a href="https://wa.me/966571653884?text=السلام عليكم، تم الدفع ورقم الفاتورة:" target="_blank" style="background: linear-gradient(45deg, #25D366, #128C7E); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; transition: all 0.3s ease;">
-                                    إرسال رقم الفاتورة عبر واتساب
-                                </a>
-                            </div>
+                            ${product.paymentLink.includes('package') ? 
+                                `<button class="buy-now" onclick="buyPackage('${product.paymentLink}')">
+                                    <span class="material-icons">payment</span>
+                                    اشتر الآن
+                                </button>` :
+                                `<button class="add-to-cart" onclick="addToCart('${productId}', '${product.title}', ${product.price}, '${product.paymentLink}')">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                    أضف للسلة
+                                </button>
+                                <button class="buy-now" onclick="buyNow('${productId}', '${product.title}', ${product.price}, '${product.paymentLink}')">
+                                    <span class="material-icons">payment</span>
+                                    اشتر الآن
+                                </button>`
+                            }
                         </div>
                     </div>
                 </div>
@@ -3246,18 +2316,13 @@
 
         function updateCartDisplay() {
             const cartCount = document.getElementById('cart-count');
-            const cartCountMobile = document.getElementById('cart-count-mobile');
             const cartItems = document.getElementById('cart-items');
             const cartFooter = document.getElementById('cart-footer');
+            const cartTotal = document.getElementById('cart-total');
 
-            // تحديث كلا العدادين
             if (cartCount) {
                 cartCount.textContent = cart.length;
-                cartCount.style.display = cart.length > 0 ? 'flex' : 'none';
-            }
-            if (cartCountMobile) {
-                cartCountMobile.textContent = cart.length;
-                cartCountMobile.style.display = cart.length > 0 ? 'flex' : 'none';
+                cartCount.style.display = 'flex';
             }
 
             if (cart.length === 0) {
@@ -3278,7 +2343,7 @@
                 return;
             }
 
-            const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+            total = cart.reduce((sum, item) => sum + item.price, 0);
 
             let itemsHTML = '';
             cart.forEach((item, index) => {
@@ -3296,8 +2361,8 @@
             if (cartItems) {
                 cartItems.innerHTML = itemsHTML;
             }
-            if (document.getElementById('cart-total')) {
-                document.getElementById('cart-total').innerHTML = `الإجمالي: ${totalAmount} ريال`;
+            if (cartTotal) {
+                cartTotal.innerHTML = `الإجمالي: ${total} ريال`;
             }
             if (cartFooter) {
                 cartFooter.style.display = 'block';
@@ -3504,86 +2569,5 @@
             startY = 0;
         });
     </script>
-
-<script>
-// دالة شراء مباشرة بالـ API
-async function buyNowWithAPI(productId) {
-  const product = productData[productId]; // ياخذ بيانات المنتج من جدولك
-  if (!product) {
-    alert("المنتج غير موجود");
-    return;
-  }
-
-  try {
-    const res = await fetch("https://shop-mu-jet.vercel.app/api/createInvoice", { // 👈 غيّر الرابط إذا اسم مشروعك في Vercel غير
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        amount: product.price,
-        customerName: "عميل المتجر", // تقدر تخليها input ياخذ اسم العميل
-        productName: product.title
-      })
-    });
-
-    const data = await res.json();
-
-    // نبحث عن رابط الدفع في الرد
-    const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl || data?.paymentUrl;
-    if (paylinkUrl) {
-      window.open(paylinkUrl, "_blank"); // يفتح رابط الدفع
-    } else {
-      console.log("⚠️ Response from API:", data); // يطبع الرد عشان نعرف السبب لو فيه مشكلة
-      alert("خطأ: لم يتم إنشاء الفاتورة");
-    }
-  } catch (err) {
-    console.error("❌ Error:", err);
-    alert("حدث خطأ أثناء إنشاء الفاتورة");
-  }
-}
-
-// تعديل checkout ليستخدم الـ API
-window.proceedToCheckout = async function() {
-  if (cart.length === 0) return;
-
-  const checkoutBtn = document.getElementById('checkout-btn');
-  const originalText = checkoutBtn.innerHTML;
-  checkoutBtn.innerHTML = 'جاري إنشاء الفاتورة...';
-  checkoutBtn.disabled = true;
-
-  try {
-    const item = cart[0];
-    const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        amount: item.price,
-        customerName: "عميل المتجر",
-        productName: item.name
-      })
-    });
-
-    const data = await res.json();
-    const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl;
-    if (paylinkUrl) {
-      window.open(paylinkUrl, "_blank");
-      cart = [];
-      updateCartDisplay();
-      closeCart();
-      showNotification('تم إنشاء فاتورة جديدة وتوجيهك لصفحة الدفع!', 'success');
-    } else {
-      console.log("⚠️ Response from API:", data);
-      showNotification('خطأ: لم يتم إنشاء الفاتورة', 'error');
-    }
-  } catch (error) {
-    console.error(error);
-    showNotification('حدث خطأ أثناء إنشاء الفاتورة', 'error');
-  } finally {
-    checkoutBtn.innerHTML = originalText;
-    checkoutBtn.disabled = false;
-  }
-}
-</script>
-
 </body>
 </html>
-                
