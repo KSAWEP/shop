@@ -3508,30 +3508,31 @@
 <script>
 // دالة شراء مباشرة بالـ API
 async function buyNowWithAPI(productId) {
-  const product = productData[productId];
+  const product = productData[productId]; // ياخذ بيانات المنتج من جدولك
   if (!product) {
     alert("المنتج غير موجود");
     return;
   }
 
   try {
-    const res = await fetch("https://shop-mu-jet.vercel.app/api/createInvoice", {
+    const res = await fetch("https://shop-mu-jet.vercel.app/api/createInvoice", { // 👈 غيّر الرابط إذا اسم مشروعك في Vercel غير
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         amount: product.price,
-        customerName: "عميل المتجر",
+        customerName: "عميل المتجر", // تقدر تخليها input ياخذ اسم العميل
         productName: product.title
       })
     });
 
     const data = await res.json();
-    const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl;
 
+    // نبحث عن رابط الدفع في الرد
+    const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl || data?.paymentUrl;
     if (paylinkUrl) {
-      window.open(paylinkUrl, "_blank");
+      window.open(paylinkUrl, "_blank"); // يفتح رابط الدفع
     } else {
-      console.log("⚠️ Response from API:", data); // 👈 هنا يطبع الرد في Console
+      console.log("⚠️ Response from API:", data); // يطبع الرد عشان نعرف السبب لو فيه مشكلة
       alert("خطأ: لم يتم إنشاء الفاتورة");
     }
   } catch (err) {
