@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
-  // 👇 السماح فقط لدومين متجرك
+  // السماح بالوصول من موقعك
   res.setHeader("Access-Control-Allow-Origin", "https://moonhub.store");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   if (req.method === "OPTIONS") {
@@ -27,11 +27,7 @@ export default async function handler(req, res) {
         clientName: customerName || "عميل المتجر",
         orderNumber: Date.now().toString(),
         products: [
-          {
-            title: productName || "منتج",
-            price: amount,
-            qty: 1,
-          },
+          { title: productName || "منتج", price: amount, qty: 1 },
         ],
         callBackUrl: "https://moonhub.store/success",
         cancelUrl: "https://moonhub.store/cancel",
