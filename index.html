@@ -3515,7 +3515,7 @@ async function buyNowWithAPI(productId) {
   }
 
   try {
-    const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
+    const res = await fetch("https://shop-mu-jet.vercel.app/api/createInvoice", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -3527,14 +3527,15 @@ async function buyNowWithAPI(productId) {
 
     const data = await res.json();
     const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl;
+
     if (paylinkUrl) {
       window.open(paylinkUrl, "_blank");
     } else {
-      console.log("⚠️ Response from API:", data);
+      console.log("⚠️ Response from API:", data); // 👈 هنا يطبع الرد في Console
       alert("خطأ: لم يتم إنشاء الفاتورة");
     }
   } catch (err) {
-    console.error(err);
+    console.error("❌ Error:", err);
     alert("حدث خطأ أثناء إنشاء الفاتورة");
   }
 }
