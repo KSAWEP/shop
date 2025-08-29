@@ -2341,38 +2341,7 @@
     </footer>
 
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js">
-async function buyNowWithAPI(productId) {
-  const product = productData[productId];
-  if (!product) {
-    alert("المنتج غير موجود");
-    return;
-  }
-
-  try {
-    const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        amount: product.price,
-        customerName: "عميل المتجر",
-        productName: product.title
-      })
-    });
-
-    const data = await res.json();
-    if (data?.invoiceUrl) {
-      window.open(data.invoiceUrl, "_blank"); // يفتح رابط الدفع
-    } else {
-      alert("خطأ: لم يتم إنشاء الفاتورة");
-    }
-  } catch (err) {
-    console.error(err);
-    alert("حدث خطأ أثناء إنشاء الفاتورة");
-  }
-}
-
-</script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
 
     <script>
@@ -3364,46 +3333,26 @@ async function buyNowWithAPI(productId) {
             document.body.style.overflow = 'auto';
         }
 
-        
-window.proceedToCheckout = async function() {
-    if (cart.length === 0) return;
+        window.proceedToCheckout = async function() {
+            if (cart.length === 0) return;
 
-    const checkoutBtn = document.getElementById('checkout-btn');
-    const originalText = checkoutBtn.innerHTML;
-    checkoutBtn.innerHTML = 'جاري إنشاء الفاتورة...';
-    checkoutBtn.disabled = true;
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const originalText = checkoutBtn.innerHTML;
+            checkoutBtn.innerHTML = 'جاري إرسال الطلب...';
+            checkoutBtn.disabled = true;
 
-    try {
-        const item = cart[0]; // حسب الكود، يسمح بمنتج واحد فقط في السلة
-        const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                amount: item.price,
-                customerName: "عميل المتجر",
-                productName: item.name
-            })
-        });
-
-        const data = await res.json();
-        if (data?.invoiceUrl) {
-            window.open(data.invoiceUrl, "_blank");
-            cart = [];
-            updateCartDisplay();
-            closeCart();
-            showNotification('تم إنشاء فاتورة جديدة وتوجيهك لصفحة الدفع!', 'success');
-        } else {
-            showNotification('خطأ: لم يتم إنشاء الفاتورة', 'error');
-        }
-    } catch (error) {
-        console.error(error);
-        showNotification('حدث خطأ أثناء إنشاء الفاتورة', 'error');
-    } finally {
-        checkoutBtn.innerHTML = originalText;
-        checkoutBtn.disabled = false;
-    }
-}
-
+            try {
+                if (cart.length === 1) {
+                    const item = cart[0];
+                    window.open(item.paymentLink, '_blank');
+                    
+                    cart = [];
+                    updateCartDisplay();
+                    closeCart();
+                    showNotification('تم توجيهك لصفحة الدفع!', 'success');
+                } else {
+                    await sendToWhatsApp();
+                }
                 
             } catch (error) {
                 showNotification('حدث خطأ، يرجى المحاولة مرة أخرى', 'error');
@@ -3555,6 +3504,84 @@ window.proceedToCheckout = async function() {
             startY = 0;
         });
     </script>
+
+<script>
+// دالة شراء مباشرة بالـ API
+async function buyNowWithAPI(productId) {
+  const product = productData[productId];
+  if (!product) {
+    alert("المنتج غير موجود");
+    return;
+  }
+
+  try {
+    const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount: product.price,
+        customerName: "عميل المتجر",
+        productName: product.title
+      })
+    });
+
+    const data = await res.json();
+    const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl;
+    if (paylinkUrl) {
+      window.open(paylinkUrl, "_blank");
+    } else {
+      console.log("⚠️ Response from API:", data);
+      alert("خطأ: لم يتم إنشاء الفاتورة");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("حدث خطأ أثناء إنشاء الفاتورة");
+  }
+}
+
+// تعديل checkout ليستخدم الـ API
+window.proceedToCheckout = async function() {
+  if (cart.length === 0) return;
+
+  const checkoutBtn = document.getElementById('checkout-btn');
+  const originalText = checkoutBtn.innerHTML;
+  checkoutBtn.innerHTML = 'جاري إنشاء الفاتورة...';
+  checkoutBtn.disabled = true;
+
+  try {
+    const item = cart[0];
+    const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount: item.price,
+        customerName: "عميل المتجر",
+        productName: item.name
+      })
+    });
+
+    const data = await res.json();
+    const paylinkUrl = data?.url || data?.invoiceUrl || data?.transactionUrl;
+    if (paylinkUrl) {
+      window.open(paylinkUrl, "_blank");
+      cart = [];
+      updateCartDisplay();
+      closeCart();
+      showNotification('تم إنشاء فاتورة جديدة وتوجيهك لصفحة الدفع!', 'success');
+    } else {
+      console.log("⚠️ Response from API:", data);
+      showNotification('خطأ: لم يتم إنشاء الفاتورة', 'error');
+    }
+  } catch (error) {
+    console.error(error);
+    showNotification('حدث خطأ أثناء إنشاء الفاتورة', 'error');
+  } finally {
+    checkoutBtn.innerHTML = originalText;
+    checkoutBtn.disabled = false;
+  }
+}
+</script>
+
 </body>
 </html>
                 
