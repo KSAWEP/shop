@@ -2341,7 +2341,38 @@
     </footer>
 
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js">
+async function buyNowWithAPI(productId) {
+  const product = productData[productId];
+  if (!product) {
+    alert("المنتج غير موجود");
+    return;
+  }
+
+  try {
+    const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount: product.price,
+        customerName: "عميل المتجر",
+        productName: product.title
+      })
+    });
+
+    const data = await res.json();
+    if (data?.invoiceUrl) {
+      window.open(data.invoiceUrl, "_blank"); // يفتح رابط الدفع
+    } else {
+      alert("خطأ: لم يتم إنشاء الفاتورة");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("حدث خطأ أثناء إنشاء الفاتورة");
+  }
+}
+
+</script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
 
     <script>
@@ -2412,7 +2443,7 @@
             init() {
                 this.trackPageView();
                 this.setupEventListeners();
-                console.log('🌙 Moon Analytics مُفعل بنجاح');
+                console.log('🌙 Moon Analytics مفعل بنجاح');
             }
 
             async trackEvent(eventType, data = {}) {
@@ -3017,7 +3048,7 @@
                                 <span class="material-icons">add_shopping_cart</span>
                                 أضف للسلة
                             </button>
-                            <button class="buy-now" onclick="showOrderProcess('${productId}', '${product.title}', ${product.price})">
+                            <button class="buy-now" onclick="buyNowWithAPI('${productId}')">
                                 <span class="material-icons">payment</span>
                                 اشتر الآن
                             </button>
@@ -3333,34 +3364,45 @@
             document.body.style.overflow = 'auto';
         }
 
-        window.proceedToCheckout = async function() {
-            if (cart.length === 0) return;
+        
+window.proceedToCheckout = async function() {
+    if (cart.length === 0) return;
 
-            const checkoutBtn = document.getElementById('checkout-btn');
-            const originalText = checkoutBtn.innerHTML;
-            checkoutBtn.innerHTML = 'جاري إرسال الطلب...';
-            checkoutBtn.disabled = true;
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const originalText = checkoutBtn.innerHTML;
+    checkoutBtn.innerHTML = 'جاري إنشاء الفاتورة...';
+    checkoutBtn.disabled = true;
 
-            try {
-                if (cart.length === 1) {
-                    const item = cart[0];
-                    window.open(item.paymentLink, '_blank');
-                    
-                    cart = [];
-                    updateCartDisplay();
-                    closeCart();
-                    showNotification('تم توجيهك لصفحة الدفع!', 'success');
-                } else {
-                    await sendToWhatsApp();
-                }
-                
-            } catch (error) {
-                showNotification('حدث خطأ، يرجى المحاولة مرة أخرى', 'error');
-            } finally {
-                checkoutBtn.innerHTML = originalText;
-                checkoutBtn.disabled = false;
-            }
+    try {
+        const item = cart[0]; // حسب الكود، يسمح بمنتج واحد فقط في السلة
+        const res = await fetch("https://shop-u4zs.vercel.app/api/createInvoice", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                amount: item.price,
+                customerName: "عميل المتجر",
+                productName: item.name
+            })
+        });
+
+        const data = await res.json();
+        if (data?.invoiceUrl) {
+            window.open(data.invoiceUrl, "_blank");
+            cart = [];
+            updateCartDisplay();
+            closeCart();
+            showNotification('تم إنشاء فاتورة جديدة وتوجيهك لصفحة الدفع!', 'success');
+        } else {
+            showNotification('خطأ: لم يتم إنشاء الفاتورة', 'error');
         }
+    } catch (error) {
+        console.error(error);
+        showNotification('حدث خطأ أثناء إنشاء الفاتورة', 'error');
+    } finally {
+        checkoutBtn.innerHTML = originalText;
+        checkoutBtn.disabled = false;
+    }
+}
 
         window.removeFromCart = removeFromCart;
 
@@ -3506,4 +3548,3 @@
     </script>
 </body>
 </html>
-                
