@@ -2207,7 +2207,47 @@
         </div>
     </section>
 
-    <!-- Contact Page -->
+    <!-- Thank You / Success Page -->
+    <section id="thank-you" class="page-section">
+        <div class="container">
+            <div style="text-align: center; padding: 80px 20px; min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
+                <div style="background: linear-gradient(145deg, var(--bg-card), rgba(16, 185, 129, 0.05)); padding: 50px; border-radius: 25px; border: 2px solid rgba(16, 185, 129, 0.3); max-width: 600px; margin: 0 auto;">
+                    <div style="font-size: 4rem; margin-bottom: 20px; color: var(--success-color);">✅</div>
+                    
+                    <h1 style="color: var(--success-color); font-size: 2.5rem; margin-bottom: 20px; font-weight: 900;">تم الدفع بنجاح!</h1>
+                    
+                    <p style="color: var(--text-primary); font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                        شكراً لك على ثقتك بنا! تم استلام طلبك وسيتم التواصل معك خلال 24 ساعة لتأكيد تفاصيل المشروع والبدء في العمل.
+                    </p>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 15px; margin: 30px 0;">
+                        <h3 style="color: var(--accent-color); margin-bottom: 15px; font-size: 1.3rem;">الخطوات التالية:</h3>
+                        <div style="text-align: right; color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin: 10px 0;">1. احتفظ برقم الفاتورة للمراجعة</p>
+                            <p style="margin: 10px 0;">2. سنتواصل معك عبر الواتساب خلال 24 ساعة</p>
+                            <p style="margin: 10px 0;">3. سنطلب منك تفاصيل المشروع لبدء العمل</p>
+                            <p style="margin: 10px 0;">4. سيتم تسليم المشروع حسب المدة المتفق عليها</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                        <a href="https://wa.me/966571653884?text=السلام عليكم، تم إتمام عملية الدفع للتو" 
+                           target="_blank" 
+                           style="background: linear-gradient(45deg, #25D366, #128C7E); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                            <span class="material-icons">chat</span>
+                            تواصل معنا الآن
+                        </a>
+                        
+                        <button onclick="showPage('home')" 
+                                style="background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); color: white; padding: 15px 30px; border-radius: 25px; border: none; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                            <span class="material-icons">home</span>
+                            العودة للرئيسية
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="contact" class="page-section">
         <div class="container">
             <h2 class="section-title">تواصل معنا</h2>
@@ -2712,6 +2752,9 @@
             // تشغيل نظام Moon Analytics
             window.moonAnalytics = new MoonFirebaseAnalytics();
             
+            // فحص ما إذا كان المستخدم عائد من عملية دفع ناجحة
+            checkPaymentSuccess();
+            
             showPage('home');
             updateCartDisplay();
             initHeroAnimations();
@@ -2737,6 +2780,34 @@
                 }
             });
         });
+
+        // فحص نجاح عملية الدفع
+        function checkPaymentSuccess() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paymentSuccess = urlParams.get('payment_success');
+            
+            if (paymentSuccess === '1') {
+                // إظهار صفحة الشكر
+                setTimeout(() => {
+                    showPage('thank-you');
+                    showNotification('تمت عملية الدفع بنجاح! شكراً لثقتك بنا', 'success');
+                    
+                    // تتبع نجاح الدفع
+                    if (window.moonAnalytics) {
+                        const lastOrder = JSON.parse(localStorage.getItem('lastOrder') || '{}');
+                        window.moonAnalytics.trackEvent('payment_success', {
+                            productId: lastOrder.productId,
+                            productName: lastOrder.productName,
+                            price: lastOrder.price
+                        });
+                    }
+                    
+                    // تنظيف الـ URL
+                    const newUrl = window.location.origin + window.location.pathname;
+                    window.history.replaceState({}, document.title, newUrl);
+                }, 1000);
+            }
+        }
 
         // دالة لتتبع أحداث مخصصة
         window.trackCustomEvent = function(eventType, data = {}) {
@@ -3157,10 +3228,20 @@
                 clickedButton.disabled = true;
             }
 
-            // استخدام رابط الدفع المباشر من بيانات المنتج
+            // حفظ معلومات الطلب للاستخدام في صفحة الشكر
+            localStorage.setItem('lastOrder', JSON.stringify({
+                productId: productId,
+                productName: product.title,
+                price: product.price,
+                timestamp: Date.now()
+            }));
+
+            // استخدام رابط الدفع المباشر مع إضافة معاملات الإرجاع
             if (product.paymentLink && product.paymentLink !== '#') {
                 setTimeout(() => {
-                    window.open(product.paymentLink, '_blank');
+                    const returnUrl = encodeURIComponent(window.location.origin + '?payment_success=1');
+                    const paymentUrl = product.paymentLink + (product.paymentLink.includes('?') ? '&' : '?') + 'return_url=' + returnUrl;
+                    window.open(paymentUrl, '_blank');
                     showNotification('تم توجيهك لصفحة الدفع!', 'success');
                 }, 1000);
             } else {
@@ -3381,11 +3462,21 @@
             // أخذ أول منتج من السلة (المنتج الوحيد المسموح)
             const item = cart[0];
             
+            // حفظ معلومات الطلب
+            localStorage.setItem('lastOrder', JSON.stringify({
+                productId: item.id,
+                productName: item.name,
+                price: item.price,
+                timestamp: Date.now()
+            }));
+            
             // استخدام رابط الدفع المباشر من بيانات المنتج
             const product = productData[item.id];
             if (product && product.paymentLink) {
                 setTimeout(() => {
-                    window.open(product.paymentLink, '_blank');
+                    const returnUrl = encodeURIComponent(window.location.origin + '?payment_success=1');
+                    const paymentUrl = product.paymentLink + (product.paymentLink.includes('?') ? '&' : '?') + 'return_url=' + returnUrl;
+                    window.open(paymentUrl, '_blank');
                     cart = [];
                     updateCartDisplay();
                     closeCart();
