@@ -34,11 +34,19 @@ export default async function handler(req, res) {
       }),
     });
 
-    const data = await response.json();
-    console.log("⚡ Paylink API Response:", data);
-    res.status(200).json(data);
+    const text = await response.text(); // ناخذ الرد نصياً
+    console.log("⚡ Paylink Raw Response:", text);
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = { raw: text };
+    }
+
+    res.status(response.status).json(data);
   } catch (error) {
     console.error("❌ Paylink API Error:", error);
-    res.status(500).json({ error: "Failed to create invoice" });
+    res.status(500).json({ error: "Failed to create invoice", details: error.message });
   }
 }
